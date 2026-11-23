@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8f6ef">
-<meta name="handbook-release" content="7b7159c544d1f9c3d70c"><title>模电手记 · 第二章 半导体与二极管</title><style>:root{--ink:#243932;--muted:#53665d;--leaf:#254b3e;--moss:#e1e7d9;--rust:#a4422a;--line:#cccfc0;--paper:#f8f6ef;--soft:#f0eee4;--white:#fffdf6;--serif:Georgia,"Source Han Serif SC","Noto Serif CJK SC","Songti SC",STSong,SimSun,serif;--sans:"Inter","Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}
+<meta name="handbook-release" content="ebfe305afaf2933ff8a7"><title>模电手记 · 第二章 半导体与二极管</title><style>:root{--ink:#243932;--muted:#53665d;--leaf:#254b3e;--moss:#e1e7d9;--rust:#a4422a;--line:#cccfc0;--paper:#f8f6ef;--soft:#f0eee4;--white:#fffdf6;--serif:Georgia,"Source Han Serif SC","Noto Serif CJK SC","Songti SC",STSong,SimSun,serif;--sans:"Inter","Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:75px}body{background:var(--paper);color:var(--ink);margin:0;font:16px/1.7 var(--sans)}button,select{font:inherit;color:inherit}button{cursor:pointer}a{color:inherit}h1,h2,h3,p,figure{margin:0}h1,h2,h3{line-height:1.32}button:focus-visible,a:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #b75437;outline-offset:4px}button:disabled{cursor:default;opacity:.4}button,select,summary{touch-action:manipulation}button{border:1px solid var(--line);background:var(--white);border-radius:5px;padding:7px 13px}button:not(:disabled):hover{border-color:var(--leaf)}.wrap{width:min(1260px,calc(100% - 104px));margin:auto}.topbar{position:sticky;z-index:8;top:0;border-bottom:1px solid var(--line);background:var(--paper)}.topline{min-height:65px;display:flex;align-items:center;gap:35px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--serif);font-weight:700;letter-spacing:.08em;font-size:22px}.brandmark{display:grid;place-items:center;border-radius:5px;background:var(--leaf);color:#f3eed6;width:32px;height:32px}.brandmark svg{width:27px;height:27px}.modes{display:flex;gap:20px;align-self:stretch}.modes button{background:transparent;border:0;border-radius:0;border-bottom:2px solid transparent;margin:0 0 -1px;padding:3px 3px 0;color:var(--muted);font-size:14px;font-weight:600}.modes button[aria-pressed=true]{border-bottom-color:var(--rust);color:var(--rust)}.tools{display:flex;align-items:center;gap:8px;margin-left:auto;padding:5px 4px;background:transparent;border-color:transparent;font-size:13px}.tools svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linejoin:round}.cover{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);align-items:center;gap:7%;padding:32px 0 27px;border-bottom:2px solid var(--leaf);position:relative}.cover:after{content:"";position:absolute;bottom:-6px;left:0;right:0;border-bottom:1px solid var(--line)}.coverText{padding-left:3px}.over{display:flex;align-items:center;gap:12px;color:var(--rust);font-size:13px;font-weight:700;letter-spacing:.12em}.over i,.facts i{height:12px;border-left:1px solid #a8ad9c;display:inline-block}.dash{width:26px;border-top:2px solid var(--rust)}h1{font-family:var(--serif);font-size:clamp(43px,5.4vw,78px);line-height:1.18;letter-spacing:-.045em;margin:15px 0 14px;color:#223e32}.coverText>p{font-size:clamp(15px,1.2vw,18px);max-width:35em;color:#45594f;line-height:1.85}.facts{display:flex;align-items:center;gap:17px;margin-top:20px;color:var(--muted);font-size:13px}.facts b{color:var(--rust);font:700 20px Georgia,serif;margin-right:2px}.coverFig svg{width:100%;height:auto;max-height:214px;display:block;background:#20473e;border-radius:5px}.coverFig figcaption{font-size:12px;color:var(--muted);margin-top:5px;text-align:right}.coverFig figcaption span{font-family:Georgia,serif;color:var(--rust);margin-right:6px}.bodygrid{display:grid;grid-template-columns:235px minmax(0,1fr);gap:clamp(35px,5vw,78px);padding:33px 0 38px}.railInner{position:sticky;top:90px}.railHead,.trackText,.sectionTop,.cardMeta,.cardFoot,.doneBar,.footer,.modalHead,.sheetTools,.reviewTitle{display:flex;align-items:center;justify-content:space-between;gap:12px}.railHead{padding:2px 2px 14px;border-bottom:1px solid var(--line)}.railHead h2{font:700 17px var(--serif)}.railHead>span{font:italic 17px Georgia,serif;color:var(--rust)}#toc{display:grid;gap:3px;margin:10px 0 19px}.navItem{width:100%;border:1px solid transparent;border-radius:4px;background:transparent;text-align:left;display:flex;align-items:center;gap:12px;padding:10px 10px;font-size:14px;color:var(--muted)}.navItem .num{color:#6d7769;font:16px Georgia,serif}.navItem.active{background:#e4e9dc;color:#1f4437;font-weight:700;box-shadow:inset 3px 0 var(--leaf)}.navItem.active .num{color:var(--leaf);font-weight:700}.navItem .navcheck{margin-left:auto;color:var(--leaf)}.track{border-block:1px solid var(--line);padding:13px 3px 14px}.trackText{font-size:13px}.trackText b{font:600 16px Georgia,serif}.track progress{height:5px;width:100%;display:block;margin-top:10px;accent-color:var(--leaf);border:0;border-radius:3px;overflow:hidden;background:#dedfd3}.track progress::-webkit-progress-bar{background:#dedfd3}.track progress::-webkit-progress-value{background:var(--leaf)}.sourceHint{display:flex;align-items:center;gap:10px;color:var(--muted);margin-top:19px;font-size:12px;line-height:1.8}.sourceHint strong,.sourceHint small{display:block}.sourceHint small{font-size:12px}.miniBook{font-size:28px;color:#697962}.reading{min-width:0;outline:none}.mobileNav{display:none}.sectionTop{margin-bottom:7px}.secnum,.kicker{font-size:12px;font-weight:700;color:var(--rust);letter-spacing:.08em}.secnum{font:700 16px Georgia,var(--serif)}.sourceBtn{font-size:12px;background:transparent;padding:4px 9px;color:var(--muted)}.lessonTitle{font:700 clamp(28px,2.65vw,39px)/1.35 var(--serif);letter-spacing:-.02em;scroll-margin-top:80px}.lessonLead{color:var(--muted);margin:7px 0 18px}.question{border:1px solid #cbd2c0;border-radius:7px;padding:clamp(16px,2vw,26px);background:var(--white);box-shadow:0 3px 0 #e7e7dc}.cardMeta{color:var(--rust);font-size:12px;font-weight:700;letter-spacing:.08em}.cardMeta .count{color:var(--muted);font:14px Georgia,serif;letter-spacing:.07em}.question h3{font:700 clamp(20px,1.6vw,26px)/1.55 var(--serif);margin:12px 0 17px}.cardFoot{align-items:center;flex-wrap:wrap}.solid,.doneBtn{background:var(--leaf);border-color:var(--leaf);color:#fffdf1;font-size:14px;font-weight:600}.solid:hover,.doneBtn:hover{background:#396046}.pager{margin-left:auto;display:flex;gap:6px}.pager button{font-size:13px;min-width:38px;padding:5px 10px}.answer{border-left:3px solid #8ca181;margin:13px 0 16px;background:#f0f3e9;padding:11px 14px}.answer>span,.ansLead{font-size:12px;font-weight:700;display:block;color:#455f4b;margin-bottom:4px}.answer p,.reviewCard p{margin:3px 0}.deep{margin-top:10px;color:#354e40}.deep summary,.walk summary{cursor:pointer;font-weight:600}.deep summary{font-size:14px}.deep p{margin-top:7px}.block{margin:25px 0}.blockTitle{font-family:var(--serif);font-size:23px;font-weight:700}.blockTop{display:flex;align-items:center;gap:11px;margin:0 0 12px}.blockTop:after{content:"";flex:1;border-top:1px solid var(--line)}.walk{border:1px solid var(--line);background:#f4f0e5;border-radius:6px;padding:18px 22px}.walk>h3{font:700 21px/1.5 var(--serif);margin:5px 0}.walk>p{margin:5px 0 12px;color:#526052}.step{border-top:1px solid #d8d8c9;padding:9px 0}.step:last-child{padding-bottom:0}.step summary{font-size:15px}.step p{padding:6px 0 2px 17px}.testItem{border-top:1px solid var(--line);padding:14px 0 8px}.testItem h4{margin:0 0 9px;font-size:16px}.testItem h4 i{font:italic 16px Georgia;color:var(--rust);margin-right:8px}.options{display:flex;flex-wrap:wrap;gap:6px}.option{text-align:left;font-size:14px;padding:6px 10px}.option.chosen{border-color:var(--rust);background:#f7e7df}.option.correct{border-color:var(--leaf);background:#e4edde}.option>span:first-child{font:700 13px Georgia;color:var(--muted);margin-right:7px}.feedback{font-size:14px;margin:7px 0 0;color:var(--muted)}.feedback b{color:var(--rust)}.feedback.ok b{color:var(--leaf)}.doneBar{margin:26px 0 8px;border-top:2px solid var(--leaf);padding-top:16px}.doneBar button{font-size:14px}.doneBar .doneBtn[aria-pressed=true]{background:#e0e8d9;color:var(--leaf)}.footer{border-top:1px solid var(--line);color:var(--muted);padding:17px 0 27px;font-size:12px}.footer strong{font-family:var(--serif);font-size:16px}.footer a{margin-left:auto}.skip{position:fixed;top:-90px;left:12px;background:var(--white);padding:10px;z-index:20}.skip:focus{top:10px}#saveStatus{font-size:13px;color:var(--rust)}.reviewIntro{border-bottom:2px solid var(--leaf);padding-bottom:15px;margin-bottom:20px}.reviewIntro p{color:var(--muted);margin-top:6px}.reviewSection{border-bottom:2px solid var(--leaf);padding:5px 0 22px;margin-bottom:20px;scroll-margin-top:82px}.reviewCard{padding:12px 0;border-bottom:1px solid var(--line)}.reviewCard h3{font:700 20px/1.5 var(--serif);margin:0 0 6px}.reviewCard .explain{font-size:14px;color:var(--muted)}.reviewCard .explain strong{color:var(--leaf);margin-right:6px}.reviewKey{background:#e8eee2;padding:6px 10px;margin-top:7px;font-size:14px}.reviewOpts{color:var(--muted);font-size:14px}.reviewBack{font-size:13px}
 dialog{width:min(830px,96vw);max-width:96vw;max-height:94vh;max-height:94dvh;padding:0;border:1px solid #8b9d8a;border-radius:8px;background:var(--paper);color:var(--ink)}dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#142c24b5}.modalHead{padding:12px 18px;border-bottom:1px solid var(--line)}.modalHead small{color:var(--muted);font-size:12px}.modalHead h2{font:700 22px/1.25 var(--serif)}.modalHead button,.sheetTools button{font-size:13px;padding:4px 9px}.sheetTools{justify-content:center;flex-wrap:wrap;padding:8px 10px;gap:8px}.sheetTools b{font-size:13px}.sheetView{overflow:auto;background:#dfdfd4;min-height:0;overscroll-behavior:contain;border-top:1px solid var(--line)}.sheetView img{display:block;width:100%;height:auto;margin:0 auto}.sheetView.zoomed img{width:1250px;max-width:none}sub{font-size:.76em;line-height:0}.statusText{color:var(--muted);font-size:13px}
 @media(max-width:1040px){.wrap{width:calc(100% - 52px)}.bodygrid{grid-template-columns:205px minmax(0,1fr);gap:32px}.cover{gap:4%}.navItem{gap:7px;padding-inline:6px;font-size:13px}}
@@ -136,6 +136,7 @@ dialog{width:min(830px,96vw);max-width:96vw;max-height:94vh;max-height:94dvh;pad
 .coverFig[hidden],#chapterSource[hidden],.sheetTools[hidden],.sheetView[hidden]{display:none}
 #chapterSource{padding:1.1rem 1.4rem;color:var(--ink)}
 #chapterSource p{margin:.35rem 0}
+#sourcePdf{white-space:pre-line}
 @media print{.chapterNav{display:none}}
 </style></head>
 <body><a class="skip" href="#lessonStart">跳到讲义正文</a>
@@ -148,11 +149,12 @@ dialog{width:min(830px,96vw);max-width:96vw;max-height:94vh;max-height:94dvh;pad
 <nav class="chapterNav" id="chapterNav" aria-label="章节">
   <button type="button" data-chapter="2" aria-pressed="true">第二章 · 二极管</button>
   <button type="button" data-chapter="3" aria-pressed="false" id="chapter3Button" hidden>第三章 · 晶体管放大</button>
+  <button type="button" data-chapter="4" aria-pressed="false" id="chapter4Button" hidden>第四章 · 场效应管</button>
 </nav>
 <section class="cover" aria-labelledby="booktitle"><div class="coverText"><div class="over"><span class="dash"></span>模拟电子技术 <i></i> <span id="chapterName">第二章</span></div><h1 id="booktitle">半导体与二极管</h1>
 <p id="chapterLead">从硅片里的一个空位开始，一步步看懂二极管为什么能让电流更容易朝一个方向流动。</p>
 <div class="facts"><span><b id="chapterSections">5</b> 个小节</span><i></i><span><b id="chapterLabs">5</b> 个互动实验</span><i></i><span><b id="chapterQuizzes">12</b> 道自测</span></div></div>
-<figure class="coverFig" id="chapter2Figure"><svg viewBox="0 0 490 236" role="img" aria-labelledby="fig-title fig-desc" xmlns="http://www.w3.org/2000/svg"><title id="fig-title">轴向二极管的外形与符号</title><desc id="fig-desc">一只轴向整流二极管，左端为阳极 A，靠近右端的浅色色环标出阴极 K。下方电路符号的竖线也在阴极一侧。</desc>
+<figure class="coverFig" id="chapter2Figure" data-chapter-figure="2"><svg viewBox="0 0 490 236" role="img" aria-labelledby="fig-title fig-desc" xmlns="http://www.w3.org/2000/svg"><title id="fig-title">轴向二极管的外形与符号</title><desc id="fig-desc">一只轴向整流二极管，左端为阳极 A，靠近右端的浅色色环标出阴极 K。下方电路符号的竖线也在阴极一侧。</desc>
 <defs>
 <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#f2f3da" stroke-opacity=".09" stroke-width=".8"/></pattern>
 <pattern id="hatch" width="4.5" height="4.5" patternUnits="userSpaceOnUse"><path d="M0 0v4.5" stroke="#f1e8be" stroke-opacity=".27" stroke-width="1"/></pattern>
@@ -170,7 +172,7 @@ dialog{width:min(830px,96vw);max-width:96vw;max-height:94vh;max-height:94dvh;pad
 <g fill="none" stroke="#d4dcbf" stroke-width="1.2"><path d="M133 133l-25 29H57"/><path d="M287 79l21-31h62"/></g><g fill="#eee9d1"><circle cx="133" cy="133" r="2.5"/><circle cx="287" cy="79" r="2.5"/>
 <text x="55" y="182" font-size="14" font-family="Microsoft YaHei,sans-serif">阳极 A</text><text x="312" y="40" font-size="14" font-family="Microsoft YaHei,sans-serif">色环端 · 阴极 K</text></g>
 <g transform="translate(296 195)" fill="none" stroke="#dedfc2" stroke-width="1.5"><path d="M12 0H43 M43 -10L60 0 43 10Z M60 -10V10 M60 0H92"/></g><g fill="#e3e3c8" font-family="Georgia,serif" font-size="12"><text x="294" y="199">A</text><text x="394" y="199">K</text></g></svg><figcaption><span>图 2–1</span> 常见轴向整流二极管的极性</figcaption></figure>
-<figure class="coverFig" id="chapter3Figure" hidden>
+<figure class="coverFig" id="chapter3Figure" data-chapter-figure="3" hidden>
   <svg viewBox="0 0 490 236" role="img" aria-labelledby="bjt-cover-title">
     <title id="bjt-cover-title">带分压偏置的共射放大电路。输入经耦合电容到基极，输出从集电极取出。</title>
     <rect width="490" height="236" fill="#20473e"/><rect width="490" height="236" fill="url(#grid)"/>
@@ -185,6 +187,25 @@ dialog{width:min(830px,96vw);max-width:96vw;max-height:94vh;max-height:94dvh;pad
       <text x="15" y="159" font-size="15">输入</text><text x="440" y="139" font-size="15">输出</text>
     </g>
   </svg><figcaption><span>图 3–1</span> 从基极送入信号，从集电极取出反相输出</figcaption>
+</figure>
+<figure class="coverFig" id="chapter4Figure" data-chapter-figure="4" hidden>
+  <svg viewBox="0 0 490 236" role="img" aria-labelledby="fet-cover-title">
+    <title id="fet-cover-title">共源放大电路。栅极接输入，漏极经耦合电容取出输出，源极经电阻接地。</title>
+    <defs><pattern id="fet-cover-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#f2f3da" stroke-opacity=".09"/></pattern></defs>
+    <rect width="490" height="236" fill="#20473e"/><rect width="490" height="236" fill="url(#fet-cover-grid)"/>
+    <g fill="none" stroke="#eee9d1" stroke-width="2.3" stroke-linejoin="round">
+      <path d="M165 44V32H323V44M165 78V155m0 34v23h158v-21m0-30v-19H281m0-8v16m0-36v16m0-36v16M281 102h42V78M281 122h30v20M270 99v46M108 122H270M65 122H98m0-15v30m10-30v30M323 97h56m0-15v30m10-30v30m0-15h33"/>
+      <rect x="157" y="44" width="16" height="34"/><rect x="157" y="155" width="16" height="34"/>
+      <rect x="315" y="44" width="16" height="34"/><rect x="315" y="161" width="16" height="30"/>
+      <path d="M281 122l10-5v10Z" fill="#eee9d1"/><path d="M244 212v7m-13 0h26m-22 4h18m-14 4h10"/>
+      <path d="M12 122q11-12 22 0t22 0M434 97q11 17 22 0t22 0" stroke="#c0dcb3"/>
+    </g>
+    <g fill="#eee9d1"><circle cx="165" cy="122" r="3.4"/><circle cx="323" cy="97" r="3.4"/><circle cx="311" cy="142" r="3"/>
+      <text x="229" y="23" font-size="14">+V<tspan baseline-shift="sub" font-size="10">DD</tspan></text>
+      <text x="243" y="113" font-size="14">G</text><text x="335" y="89" font-size="14">D</text><text x="335" y="148" font-size="14">S</text>
+      <text x="15" y="155" font-size="15">输入</text><text x="439" y="136" font-size="15">输出</text>
+    </g>
+  </svg><figcaption><span>图 4–1</span> 从栅极送入信号，从漏极取出反相输出</figcaption>
 </figure></section>
 <div class="bodygrid"><aside class="rail" aria-label="本章导航"><div class="railInner"><div class="railHead"><h2>本章目录</h2><span id="railChapter">02</span></div><nav id="toc" aria-label="小节"></nav>
 <div class="track"><div class="trackText"><span>学习进度</span><b id="progressText">0 / 5</b></div><progress id="progressBar" value="0" max="5" aria-label="已学小节"></progress></div>
@@ -464,7 +485,7 @@ dialog{width:min(830px,96vw);max-width:96vw;max-height:94vh;max-height:94dvh;pad
     targets.forEach(function(el){
       const id=el.getAttribute('data-modian-lab');
       if(renderers[id]&&el.dataset.modianMounted!==id){renderers[id](el);el.dataset.modianMounted=id;}
-      else if(!renderers[id])window.mountModianChapterThreeLab?.(el);
+      else if(!renderers[id]&&!window.mountModianChapterThreeLab?.(el))window.mountModianChapterFourLab?.(el);
     });
   }
   window.mountModianLabs=mount;
@@ -1912,6 +1933,7 @@ dialog{width:min(830px,96vw);max-width:96vw;max-height:94vh;max-height:94dvh;pad
     });
   }
 
+  window.ModianLabUI = {ink,teal,rust,paper,grid,format,label,line,dot,box,svg,ground,choice,range,layout,figures,bindChoices,bindRanges,output,waveform};
   const renderers = {'3.1':regions,'3.2':clipping,'3.3':bias,'3.4':follower,'3.5':commonBase,'3.6':configurations,'3.7':cascade};
   window.mountModianChapterThreeLab = el => {
     const id = el.dataset.modianLab;
@@ -1923,7 +1945,1440 @@ dialog{width:min(830px,96vw);max-width:96vw;max-height:94vh;max-height:94dvh;pad
     return true;
   };
 })();
-</script><script>function noteAttrs(s, uid, kind, label) {
+</script>
+<script type="application/json" id="chapterFourData">
+{
+  "lessons": [
+    {
+      "n": "4.1",
+      "title": "结型场效应管",
+      "short": "结型场效应管",
+      "lead": "把沟道想成一条能变宽、变窄的路。栅极上的电压一变，路的宽度和漏极电流也跟着变。",
+      "pages": [
+        20
+      ],
+      "paper": "20",
+      "source": {
+        "ppt": "4.1 结型场效应管.ppt",
+        "slides": "2–18",
+        "pdf": "模电第一章讲义.pdf",
+        "pages": "20"
+      },
+      "lab": "改变栅压，观察 JFET 沟道",
+      "walk": "用两次比较判断 JFET 的工作状态",
+      "setup": "一只 N 沟道 JFET 的 I_DSS = 8 mA，U_GS(off) = −4 V，取 U_GS = −2 V，先令 U_DS = 5 V。计算采用理想转移特性。",
+      "steps": [
+        [
+          "沟道关了吗？",
+          "U_GS = −2 V 还没有负到 −4 V，N 沟道仍有导电空间。若把 U_GS 降到 −4 V，理想模型下会截止。"
+        ],
+        [
+          "漏端先夹断了吗？",
+          "漏端开始预夹断的电压约为 U_DS = U_GS − U_GS(off) = 2 V。这里 U_DS = 5 V，超过这个边界，可以用恒流区的估算式。"
+        ],
+        [
+          "漏极电流是多少？",
+          "I_D ≈ 8 mA × [1 − (−2 V)/(−4 V)]² = 2 mA。若保持栅压，把 U_DS 降到 1 V，就进入可变电阻区，不能继续用这条恒流区公式。"
+        ]
+      ],
+      "cards": [
+        {
+          "q": "JFET 的三个脚分别在做什么？",
+          "a": "源极 S 和漏极 D 连着沟道两头，电流走这条路。栅极 G 夹在旁边，用电压改变沟道有多宽。",
+          "deep": "N 沟道用电子作为主要载流子。正常工作时栅极与沟道之间的 PN 结处于反偏或零偏，稳态栅极电流很小。P 沟道正常偏置的电压极性与 N 沟道相反。",
+          "uid": "ch04-41-card-channel"
+        },
+        {
+          "q": "N 沟道 JFET 把栅压调得更负，为什么漏极电流会减小？",
+          "a": "栅极电压变得比源极低得更多，PN 结旁边不能导电的区域会扩宽，留下的沟道变窄，同样的漏源电压下更难通过电流。",
+          "deep": "用 U_GS = V_G − V_S 表示栅源电压。N 沟道 JFET 在 U_GS = 0 时已经有沟道。U_GS 向负方向达到 U_GS(off) 时，理想漏极电流接近零。这个带符号的关断电压也记作 U_P。课件给出三种设定静态偏置的方法。自偏置让源极电阻自动抬高源极电位，分压式偏置用电阻设定栅极电位，恒流源偏置用电流源设定支路电流。",
+          "uid": "ch04-41-card-control"
+        },
+        {
+          "q": "漏端夹断以后，为什么漏极还有电流？",
+          "a": "当 U_DS 增大，沟道靠近漏极的一头先被挤得很窄。载流子到达这段之后，仍会被较强的电场拉到漏极，所以电流还能流。",
+          "deep": "预夹断前是可变电阻区。预夹断边界对 N 沟道约为 U_DS = U_GS − U_GS(off)。越过该边界且尚未击穿时，电流主要由 U_GS 决定，称恒流区或饱和区。栅压使整个沟道截止时，I_D 才近似为零。",
+          "uid": "ch04-41-card-pinch"
+        },
+        {
+          "q": "看输出特性和转移特性，各在问什么？",
+          "a": "输出曲线问固定栅压时，漏源电压变化会怎样。转移曲线问在恒流区内，换个栅压，漏极电流能变多少。",
+          "deep": "输出特性画 I_D 对 U_DS，每条曲线对应一个 U_GS。N 沟道在恒流区常用 I_D ≈ I_DSS[1 − U_GS/U_GS(off)]²，适用于 U_GS(off) ≤ U_GS ≤ 0。I_DSS 是 U_GS = 0 时的恒流区漏极电流。",
+          "uid": "ch04-41-card-curves"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "N 沟道 JFET 仍在恒流区时，把 U_GS 从 −1 V 调到 −2 V，I_D 通常怎样变？",
+          "options": [
+            "增大",
+            "减小",
+            "始终保持同一个值"
+          ],
+          "ok": 1,
+          "why": "恒流区的 I_D 对 U_DS 的改变不敏感。U_GS 变得更负仍会使沟道变窄，I_D 减小。",
+          "uid": "ch04-41-quiz-gate"
+        },
+        {
+          "q": "N 沟道 JFET 的 U_GS(off) = −4 V。哪种变化会让理想 I_D 接近零？",
+          "options": [
+            "把 U_GS 调到 −4 V",
+            "保持 U_GS = 0，把 U_DS 提高到恒流区",
+            "把 U_GS 从 −3 V 调回 −1 V"
+          ],
+          "ok": 0,
+          "why": "栅压到 −4 V 时是栅控截止。恒流区的漏端预夹断仍允许电流。",
+          "uid": "ch04-41-quiz-turnoff"
+        },
+        {
+          "q": "恒流区内，若 U_GS = U_GS(off)/2，理想 I_D 约为多少？",
+          "options": [
+            "I_DSS/2",
+            "I_DSS",
+            "I_DSS/4"
+          ],
+          "ok": 2,
+          "why": "方括号内是 1 − 1/2 = 1/2。要把这个结果平方。",
+          "uid": "ch04-41-quiz-transfer"
+        }
+      ],
+      "stepIds": [
+        "ch04-41-step-1",
+        "ch04-41-step-2",
+        "ch04-41-step-3"
+      ],
+      "labId": "ch04-41-lab",
+      "walkId": "ch04-41-walk"
+    },
+    {
+      "n": "4.2",
+      "title": "MOS 场效应管及其参数",
+      "short": "MOS 场效应管与参数",
+      "lead": "栅极和沟道隔着绝缘层。改变栅极电压，可以让沟道出现，也可以让原有的沟道变窄。",
+      "pages": [
+        16,
+        17,
+        18,
+        19,
+        21
+      ],
+      "paper": "16–19、21",
+      "source": {
+        "ppt": "4.2 MOS场效应管（包括场效应管参数）.ppt",
+        "slides": "2–31",
+        "pdf": "模电第一章讲义.pdf",
+        "pages": "16–19、21",
+        "note": "本地讲义主要讲 N 沟道。P 沟道、额定值和绝缘栅的静电防护见老师课件。"
+      },
+      "lab": "比较增强型和耗尽型 MOS 管",
+      "walk": "从栅压、漏压判断 NMOS 工作区",
+      "setup": "一只 N 沟道增强型 MOS 管，U_GS(th) = 2 V。先取 U_GS = 4 V，再从低到高调 U_DS。用 K = 0.5 mA/V²，并约定理想恒流区 I_D = K[U_GS − U_GS(th)]²。",
+      "steps": [
+        [
+          "U_GS = 4 V，沟道形成了吗？",
+          "栅压高于 2 V 的开启电压，表面形成 N 型反型沟道。超过门槛的部分 U_GS − U_GS(th) = 2 V。"
+        ],
+        [
+          "U_DS = 1 V 时，可以用恒流区平方公式吗？",
+          "1 V 小于 2 V 的边界，沟道在两端都有导电能力，处于可变电阻区。此时 I_D 还会随 U_DS 明显改变。"
+        ],
+        [
+          "把 U_DS 提到 3 V，可以估出多大电流？",
+          "3 V 已越过 2 V 的边界，进入恒流区。I_D ≈ 0.5 mA/V² × (2 V)² = 2 mA。实际电流仍可能随 U_DS 略有变化。"
+        ]
+      ],
+      "cards": [
+        {
+          "q": "MOS 管的栅极没有接到沟道，怎么管得住电流？",
+          "a": "栅极隔着绝缘层，像隔着一层玻璃吸引沟道里的电荷。栅压改变电场，电场就能改变沟道里的可移动电荷。",
+          "deep": "MOS 的栅极与半导体隔着氧化绝缘层，正常工作时直流栅极漏电很小。栅极和其他端子之间仍有电容，改变栅压时需要对这些电容充放电。 绝缘栅容易受静电损伤，实际插接要按器件要求防护。",
+          "uid": "ch04-42-card-oxide"
+        },
+        {
+          "q": "N 沟道增强型 MOS 管从 U_GS = 0 开始，什么时候有沟道？",
+          "a": "增强型没有预先做好的导电沟道。给栅极加足够的正电压，电场把电子吸到表面，连成一条可以导电的路。",
+          "deep": "N 沟道增强型常用正的开启电压 U_GS(th)，课件也记为 U_T。P 沟道增强型通常要把栅极电位压到源极以下，电位差的大小超过 |U_T| 才能形成沟道。阈值对应规定的小电流，是否充分导通还要看实际 U_GS、U_DS 和器件参数。",
+          "uid": "ch04-42-card-enhance"
+        },
+        {
+          "q": "耗尽型为何在 U_GS = 0 就能导通？",
+          "a": "耗尽型天生就有一条沟道。有合适漏源电压时，即使栅源电压为零也能通过电流。N 沟道加负栅压会挤窄沟道，加正栅压会增强它。",
+          "deep": "N 沟道耗尽型 MOS 管的关断栅压是负值。正常额定条件下可以用正栅压增强已有沟道。N 沟道耗尽型可用零偏置或源极电阻自偏置。N 沟道增强型在零偏置时截止，可用分压电路建立足够正的 U_GS。P 沟道器件对应偏置和电流方向反过来。",
+          "uid": "ch04-42-card-depletion"
+        },
+        {
+          "q": "开启电压、跨导和输出电阻各说明什么？",
+          "a": "开启电压告诉你要把栅压推到哪儿，沟道才开始明显出现。跨导告诉你在当前工作点再推一点栅压，漏极电流改变多少。输出电阻告诉你漏压自己变动时，漏流有多容易被带动。",
+          "deep": "在 Q 点附近，跨导 g_m = ∂I_D/∂U_GS，测它时保持 U_DS 不变。单位 S，常用 mS。漏极小信号输出电阻 r_ds 看固定 U_GS 时 U_DS 与 I_D 的增量关系。在理想恒流近似下常把它视为很大。 最大漏极电流、漏源击穿电压和最大耗散功率 P_DM 是不同额定值。实际直流耗散可估为 U_DS I_D，还要核对温度等规定条件。",
+          "uid": "ch04-42-card-parameters"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "同样是 N 沟道 MOS 管，在适当漏源电压下哪种结构在 U_GS = 0 时就有沟道？",
+          "options": [
+            "增强型",
+            "耗尽型",
+            "两者都必须先加正栅压"
+          ],
+          "ok": 1,
+          "why": "耗尽型有预制沟道，增强型需要足够的正栅压建立反型沟道。",
+          "uid": "ch04-42-quiz-type"
+        },
+        {
+          "q": "增强型 NMOS 的 U_GS(th) = 1.5 V，U_GS = 3 V，U_DS = 0.5 V。理想模型下在哪个区？",
+          "options": [
+            "截止区",
+            "恒流区",
+            "可变电阻区"
+          ],
+          "ok": 2,
+          "why": "栅压已超过门槛，U_DS 尚小于 U_GS − U_GS(th) = 1.5 V，处于可变电阻区。",
+          "uid": "ch04-42-quiz-region"
+        },
+        {
+          "q": "某工作点 g_m = 2 mS，U_DS 保持不变。U_GS 增加 10 mV，漏极电流约增加多少？",
+          "options": [
+            "20 μA",
+            "5 μA",
+            "20 mA"
+          ],
+          "ok": 0,
+          "why": "Δi_d ≈ g_m Δu_gs。2 mS × 10 mV = 20 μA。",
+          "uid": "ch04-42-quiz-gm"
+        }
+      ],
+      "stepIds": [
+        "ch04-42-step-1",
+        "ch04-42-step-2",
+        "ch04-42-step-3"
+      ],
+      "labId": "ch04-42-lab",
+      "walkId": "ch04-42-walk"
+    },
+    {
+      "n": "4.3",
+      "title": "场效应管的小信号模型",
+      "short": "场效应管的小信号模型",
+      "lead": "管子的曲线是弯的。在静态工作点附近只动一小点，可以把那一小段当直线来算。",
+      "pages": [
+        21,
+        33,
+        34
+      ],
+      "paper": "21、33–34",
+      "source": {
+        "ppt": "4.3-4.6 三种组态场效应管放大电路分析.ppt",
+        "slides": "2–3",
+        "references": [
+          {
+            "pdf": "模电第一章讲义.pdf",
+            "pages": "21"
+          },
+          {
+            "pdf": "模电第二章讲义.pdf",
+            "pages": "33–34"
+          }
+        ]
+      },
+      "lab": "在转移曲线上找静态点和斜率",
+      "walk": "用跨导和输出电阻估算漏流变化",
+      "setup": "某管在恒流区的 Q 点附近，g_m = 2 mS，r_ds = 50 kΩ。栅源电压和漏源电压只在小范围内变化。",
+      "steps": [
+        [
+          "固定漏压，把 u_gs 提高 10 mV，漏流变化多少？",
+          "受控电流源给出 Δi_d ≈ g_m Δu_gs = 2 mS × 10 mV = 20 μA。"
+        ],
+        [
+          "保持栅源电压 U_GS 不变，漏源电压增加 0.10 V 呢？",
+          "输出电阻支路给出 Δi_d ≈ Δu_ds/r_ds = 0.10 V/50 kΩ = 2 μA。"
+        ],
+        [
+          "两项一起发生，漏流变化怎么估？",
+          "在这个线性模型中两项相加，约增加 22 μA。若题目忽略 r_ds 的有限作用，估算值是 20 μA。"
+        ]
+      ],
+      "cards": [
+        {
+          "q": "小信号模型为什么只在 Q 点附近好用？",
+          "a": "弯曲的路在脚下一小段看起来近似直的，走远了就能看出弯。栅源电压只小幅变化时，也可以用那一点的斜率估算漏极电流。",
+          "deep": "线性模型用的是静态工作点附近的增量。先用直流电路求 Q 点，再用 Q 点附近的参数计算交流。大摆幅、跨进截止或可变电阻区时，单个 Q 点的线性模型会失准。",
+          "uid": "ch04-43-card-linear"
+        },
+        {
+          "q": "模型中的 g_m u_gs 是什么？",
+          "a": "把它想成跟着栅压变化的电流源。栅源小信号电压多一点，漏极支路多出与它成比例的一点电流。",
+          "deep": "以漏极流向源极为正方向，受控源支路电流是 g_m u_gs。计入并联的 r_ds，总的漏极小信号电流 i_d ≈ g_m u_gs + u_ds/r_ds。理想增强型 NMOS 的 I_D = K[U_GS − U_GS(th)]²，所以 g_m = 2K[U_GSQ − U_GS(th)]，其中 K 采用这条式子的约定。",
+          "uid": "ch04-43-card-gm"
+        },
+        {
+          "q": "为什么模型的漏源之间还能放一个电阻？",
+          "a": "固定栅压时，真的管子并非把漏极电流钉得完全不动。换一点漏源电压，电流通常也会略变，可用一个较大的电阻表示这点影响。",
+          "deep": "r_ds = (∂I_D/∂U_DS)⁻¹，取 Q 点并固定 U_GS。低频小信号图中它与受控电流源并联。若 r_ds 远大于看到的相关外接电阻，常忽略这条支路。",
+          "uid": "ch04-43-card-ds"
+        },
+        {
+          "q": "画小信号模型时，栅极这一端接到哪里？",
+          "a": "栅极电压可以控制电流，栅极本身只需要很小的低频电流。简化图里栅极这一端开着，用它和源极之间的电压去控制漏源支路。",
+          "deep": "在本章低频和中频近似中，忽略栅极漏电及寄生电容电流。放大器端口的输入电阻仍要计入外接栅极偏置网络。高频时栅极电容会引入交流电流。",
+          "uid": "ch04-43-card-gate"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "用一个固定 g_m 算交流，哪种前提最合适？",
+          "options": [
+            "信号只在选好的 Q 点附近小幅摆动",
+            "信号反复跑进截止区",
+            "漏极已经进入击穿"
+          ],
+          "ok": 0,
+          "why": "g_m 是 Q 点附近的局部斜率，摆动跨过工作区时不能保持同一个值。",
+          "uid": "ch04-43-quiz-linear"
+        },
+        {
+          "q": "在 Q 点附近，g_m = 3 mS，u_gs = −5 mV。忽略 r_ds，i_d 变化约为多少？",
+          "options": [
+            "+15 μA",
+            "−15 μA",
+            "−1.67 mA"
+          ],
+          "ok": 1,
+          "why": "3 mS × (−5 mV) = −15 μA，负号表示定义方向上的漏流分量减小。",
+          "uid": "ch04-43-quiz-gm"
+        },
+        {
+          "q": "输出特性在 Q 点附近越平，固定栅压时的小信号 r_ds 有什么变化？",
+          "options": [
+            "越小",
+            "约为 0",
+            "越大"
+          ],
+          "ok": 2,
+          "why": "同样的漏压变化只引起更小的漏流变化，两者相除得到更大的 r_ds。",
+          "uid": "ch04-43-quiz-ds"
+        }
+      ],
+      "stepIds": [
+        "ch04-43-step-1",
+        "ch04-43-step-2",
+        "ch04-43-step-3"
+      ],
+      "labId": "ch04-43-lab",
+      "walkId": "ch04-43-walk"
+    },
+    {
+      "n": "4.4",
+      "title": "共源极放大电路",
+      "short": "共源极放大电路",
+      "lead": "从栅极送信号，从漏极取输出。栅压一抬，漏极电流变大，漏极电压顺势往下走。",
+      "pages": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "paper": "35–42、44–48",
+      "source": {
+        "ppt": "4.3-4.6 三种组态场效应管放大电路分析.ppt",
+        "slides": "4–12",
+        "pdf": "模电第二章讲义.pdf",
+        "pages": "35–42、44–48"
+      },
+      "lab": "观察共源反相和负载效应",
+      "walk": "先求共源 Q 点，再算中频增益",
+      "setup": "N 沟道增强型 MOS 管的源极接地，偏置网络给栅极 4 V。V_DD = 12 V，R_D = 2 kΩ，R_L = 2 kΩ 经耦合电容接入。U_GS(th) = 2 V，K = 0.5 mA/V²，恒流区采用 I_D = K[U_GS − U_GS(th)]²。",
+      "steps": [
+        [
+          "直流时，管子的工作点在哪里？",
+          "U_GSQ = 4 V，先按恒流区算 I_DQ = 0.5 × (4 − 2)² mA = 2 mA。负载耦合电容开路。U_DSQ = 12 V − 2 mA × 2 kΩ = 8 V，大于预夹断边界 2 V，假设成立。"
+        ],
+        [
+          "中频时，漏端看到多大交流负载？",
+          "耦合电容近似短路，恒压电源是交流地。R_D 和 R_L 并联，R_D′ = 1 kΩ。理想模型的 g_m = 2K × (4 − 2) V = 2 mS。"
+        ],
+        [
+          "栅极小信号上升 10 mV，漏极怎么动？",
+          "忽略 r_ds，A_v ≈ −g_m R_D′ = −2。此刻栅极向上摆，漏极向下摆 20 mV，所以共源输出反相。"
+        ]
+      ],
+      "cards": [
+        {
+          "q": "共源电路为什么反相？",
+          "a": "栅极电压上升，管子拉走的漏极电流变多。漏极电阻上多掉了一点电压，漏极输出只能降下来。",
+          "deep": "栅极输入、漏极输出，源极是公共参考端。源极为交流地时 u_gs = u_i，i_d ≈ g_m u_i，u_o ≈ −i_d(R_D ∥ R_L)，忽略 r_ds 时 A_v ≈ −g_m(R_D ∥ R_L)。",
+          "uid": "ch04-44-card-phase"
+        },
+        {
+          "q": "为什么不同类型的场效应管要用不同的偏置？",
+          "a": "增强型要先把栅压抬过门槛才会通。N 沟道耗尽型本来就有沟道，可以让源极经电阻自己抬高，使栅压相对源极变负，得到合适的静态电流。",
+          "deep": "直流常把 U_GSQ = U_GQ − I_DQ R_S 与器件的恒流区 I_D 式联立。增强型常用分压给定栅极直流电位。适合自偏置的耗尽型，可令栅极直流近似接地并用 R_S 得到 U_GSQ ≈ −I_DQ R_S。 课件还演示了耗尽型的零偏置接法，源极和栅极的直流电位相同，用 U_GSQ = 0 得到 I_DQ ≈ I_DSS，再检查 U_DSQ。",
+          "uid": "ch04-44-card-bias"
+        },
+        {
+          "q": "联立得到一个 I_D，为什么还要检查工作区？",
+          "a": "有些算式是从恒流区的曲线拿来的。算出答案只是第一步，要回到电路里检查管子是否真的在恒流区，栅源电压有没有超出这条式子的范围。",
+          "deep": "应验证所用的转移式和偏置极性。对增强型 NMOS，确认 U_GSQ > U_GS(th)，并检查 U_DSQ ≥ U_GSQ − U_GS(th)。源极电位非零时，U_DSQ 还要减去 I_DQ R_S。",
+          "uid": "ch04-44-card-check"
+        },
+        {
+          "q": "场效应管栅极电流很小，共源电路的输入电阻就无限大吗？",
+          "a": "栅极自己几乎不取电流，接在输入端的栅极偏置电阻仍会提供一条路。整个电路的输入电阻，就主要由这条路决定。",
+          "deep": "源极交流接地、忽略栅极电流时，R_i 由栅极偏置网络决定。无负载时 R_o ≈ R_D ∥ r_ds。若 R_S 在交流中未被旁路，负反馈会让增益绝对值降低，忽略 r_ds 时常用 A_v ≈ −g_m(R_D ∥ R_L)/(1 + g_m R_S)。",
+          "uid": "ch04-44-card-ports"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "共源增强型 NMOS 在正常放大时，栅极小信号电压增加，漏极电压如何变化？",
+          "options": [
+            "增加",
+            "下降",
+            "恰好不动"
+          ],
+          "ok": 1,
+          "why": "漏极电流增大，R_D 上压降增大，漏极电压随之下降。",
+          "uid": "ch04-44-quiz-phase"
+        },
+        {
+          "q": "源极为交流地，g_m = 2 mS，R_D = R_L = 4 kΩ。忽略 r_ds，带载增益约是多少？",
+          "options": [
+            "−4",
+            "−8",
+            "+4"
+          ],
+          "ok": 0,
+          "why": "漏极交流负载是 4 kΩ ∥ 4 kΩ = 2 kΩ。增益是 −2 mS × 2 kΩ = −4。",
+          "uid": "ch04-44-quiz-load"
+        },
+        {
+          "q": "哪种方案能给栅极接地的 N 沟道耗尽型 FET 建立负 U_GSQ？",
+          "options": [
+            "把源极通过电阻接地并让电流流过它",
+            "把源极也短接到地",
+            "把栅极与源极短接"
+          ],
+          "ok": 0,
+          "why": "有漏极电流流过源极电阻时，源极高于地电位，U_GSQ = 0 − I_DQ R_S 为负。",
+          "uid": "ch04-44-quiz-bias"
+        }
+      ],
+      "stepIds": [
+        "ch04-44-step-1",
+        "ch04-44-step-2",
+        "ch04-44-step-3"
+      ],
+      "labId": "ch04-44-lab",
+      "walkId": "ch04-44-walk"
+    },
+    {
+      "n": "4.5",
+      "title": "共漏极放大电路",
+      "short": "共漏极放大电路",
+      "lead": "从源极取信号，栅极向上摆，源极也跟着摆。这个电路常放在信号源和负载之间。",
+      "pages": [
+        49,
+        50
+      ],
+      "paper": "49–50",
+      "source": {
+        "ppt": "4.3-4.6 三种组态场效应管放大电路分析.ppt",
+        "slides": "13–18",
+        "pdf": "模电第二章讲义.pdf",
+        "pages": "49–50"
+      },
+      "lab": "观察源极跟随和带载能力",
+      "walk": "算源极跟随器有多接近输入",
+      "setup": "一个中频 N 沟道源极跟随器，g_m = 2 mS，R_S = 2 kΩ，R_L = 2 kΩ 经耦合电容接到源极。忽略 r_ds。",
+      "steps": [
+        [
+          "源极向交流地有哪些路？",
+          "R_S 和 R_L 都通向交流地。源极看到 R_S′ = R_S ∥ R_L = 1 kΩ。"
+        ],
+        [
+          "栅极升高后，源极为什么会跟着升高？",
+          "漏源电流增加，R_S′ 上的交流电压升高。源极一升，实际控制电压 u_gs = u_i − u_o 的增幅就小了。"
+        ],
+        [
+          "输入向上摆 30 mV，输出大约多少？",
+          "A_v ≈ g_m R_S′/(1 + g_m R_S′) = 2/3。输出向上摆约 20 mV。带负载时跟随程度由 g_m 和 R_S′ 共同决定。"
+        ]
+      ],
+      "cards": [
+        {
+          "q": "为什么共漏电路也叫源极跟随器？",
+          "a": "信号从栅极进，从源极出。栅极抬高，管子会多给一点电流，把源极也抬起来。源极上升会缩小栅源的变化量，让两端一起动。",
+          "deep": "漏极接恒定的电源，在小信号图中是公共交流端。忽略 r_ds 时，u_o = g_m(u_i − u_o)R_S′，解得 A_v ≈ g_m R_S′/(1 + g_m R_S′)，其中 R_S′ = R_S ∥ R_L。",
+          "uid": "ch04-45-card-follower"
+        },
+        {
+          "q": "输出比输入摆得还小，共漏为什么有用？",
+          "a": "有些信号源电压够大，却供不了多少电流。共漏的一头容易接在这样的信号源后面，另一头能用较低的输出电阻带动负载。",
+          "deep": "栅极低频电流忽略时，端口 R_i 主要由栅极偏置电阻决定，通常较高。撤下负载并把独立小信号源置零后，R_o ≈ R_S ∥ (1/g_m)，这里忽略 r_ds。",
+          "uid": "ch04-45-card-buffer"
+        },
+        {
+          "q": "自偏置方程算出两个漏极电流，怎么选？",
+          "a": "平方运算会给两个看起来都对的数。把每个数放回电路，算出对应的栅压，再看有没有超出管子可以工作的范围。",
+          "deep": "对 U_GQ ≈ 0 的 N 沟道耗尽型自偏置，U_GSQ ≈ −I_DQ R_S。若某个根使 U_GSQ 低于关断电压，就超出所用转移式的物理范围。还需用 U_DSQ 检查另一个根所在的工作区。",
+          "uid": "ch04-45-card-roots"
+        },
+        {
+          "q": "把源极跟随器接上更重的负载，会发生什么？",
+          "a": "负载电阻减小，同样的电流只能推起更小的输出电压。跟随器还能同相工作，但输出摆幅可能明显小于输入。",
+          "deep": "负载变小使 g_m R_S′ 变小，A_v 更偏离 1。静态电位需按直流通路另算。若输出经耦合电容接负载，负载通常只影响本例的交流通路。",
+          "uid": "ch04-45-card-loads"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "中频源极跟随器下列哪种电压增益最合理？",
+          "options": [
+            "−1",
+            "0.8",
+            "8"
+          ],
+          "ok": 1,
+          "why": "共漏同相，通常 0 \u003c A_v \u003c 1。",
+          "uid": "ch04-45-quiz-phase"
+        },
+        {
+          "q": "保持 g_m 和 R_S 不变，减小经电容耦合进来的 R_L，源极跟随器的电压增益会怎样？",
+          "options": [
+            "减小",
+            "变成负数",
+            "一定变成 1"
+          ],
+          "ok": 0,
+          "why": "并联结果 R_S′ 变小，从而 g_m R_S′/(1 + g_m R_S′) 变小。",
+          "uid": "ch04-45-quiz-load"
+        },
+        {
+          "q": "忽略 r_ds，栅极的交流电压为零，R_S = 1 kΩ，g_m = 4 mS。撤下负载看进去，R_o 约为多少？",
+          "options": [
+            "1.25 kΩ",
+            "4 kΩ",
+            "200 Ω"
+          ],
+          "ok": 2,
+          "why": "1/g_m = 250 Ω，与 1 kΩ 并联后是 200 Ω。",
+          "uid": "ch04-45-quiz-resistance"
+        }
+      ],
+      "stepIds": [
+        "ch04-45-step-1",
+        "ch04-45-step-2",
+        "ch04-45-step-3"
+      ],
+      "labId": "ch04-45-lab",
+      "walkId": "ch04-45-walk"
+    },
+    {
+      "n": "4.6",
+      "title": "共栅极放大电路",
+      "short": "共栅极放大电路",
+      "lead": "把栅极的小信号电压稳住，从源极送信号。这种接法能同相放大，但会让信号源看到较低的输入电阻。",
+      "pages": [
+        35
+      ],
+      "paper": "35",
+      "source": {
+        "ppt": "4.3-4.6 三种组态场效应管放大电路分析.ppt",
+        "slides": "19–20",
+        "references": [
+          {
+            "pdf": "模电第二章讲义.pdf",
+            "pages": "35"
+          }
+        ],
+        "note": "本地讲义这一页给出与 BJT 组态的类比。共栅接法及计算见老师课件。"
+      },
+      "lab": "改变信号源内阻，观察共栅输入",
+      "walk": "先算送到源极的电压，再算实际输出",
+      "setup": "中频共栅 NMOS，忽略 r_ds 及源极偏置支路对输入的影响。g_m = 2 mS，R_D ∥ R_L = 3 kΩ。信号源开路峰值 100 mV，内阻 R_sig = 500 Ω。",
+      "steps": [
+        [
+          "信号源看到多大输入电阻？",
+          "从源极看进管子的 R_i ≈ 1/g_m = 500 Ω。它和信号源的 500 Ω 内阻组成分压。"
+        ],
+        [
+          "源极实际收到多少输入电压？",
+          "u_i 峰值 = 100 mV × 500/(500 + 500) = 50 mV。"
+        ],
+        [
+          "漏极输出多少，方向一样吗？",
+          "从源极到漏极的端口增益 A_v ≈ +g_m(R_D ∥ R_L) = +6，输出峰值为 300 mV，输入输出同相。从信号源开路电压算起的总电压增益约为 +3。"
+        ]
+      ],
+      "cards": [
+        {
+          "q": "共栅为什么叫共栅？栅极上是不是必须没电压？",
+          "a": "栅极用来给输入和输出当交流参照。它可以有适合偏置的直流电压，只要小信号时电位基本不摆动。",
+          "deep": "输入从源极进，输出从漏极出。栅极可以由稳定偏置网络和足够大的旁路电容固定在交流地。求直流工作点时，栅极偏置仍参与计算。",
+          "uid": "ch04-46-card-gate"
+        },
+        {
+          "q": "源极电压上升，为什么漏极输出也上升？",
+          "a": "栅极稳住，源极上升会缩小栅源电压，于是漏流减小。漏极电阻上的压降变小，漏极电压便升高。",
+          "deep": "栅极交流接地，u_gs = −u_i。漏极流向源极的受控电流增量 i_d ≈ −g_m u_i，u_o ≈ −i_d(R_D ∥ R_L)，故忽略 r_ds 时 A_v ≈ +g_m(R_D ∥ R_L)。",
+          "uid": "ch04-46-card-phase"
+        },
+        {
+          "q": "栅极电流很小，共栅的输入电阻为什么还小？",
+          "a": "因为输入接在源极。源极电压一变，会直接改变栅源电压，并通过管子引起明显的电流变化。",
+          "deep": "忽略 r_ds，源极看入电阻约为 1/g_m。如果源极还有偏置电阻到交流地，整个端口的 R_i 约为 1/g_m 与该偏置电阻并联。",
+          "uid": "ch04-46-card-input"
+        },
+        {
+          "q": "已经算出共栅的电压增益，还要管信号源内阻吗？",
+          "a": "要看的是源极实际拿到多少电压。共栅的输入电阻偏小，遇到高内阻源，两边一分压，留给电路放大的输入就会变小。",
+          "deep": "端口电压增益用 u_o/u_i。源电压增益还要乘 R_i/(R_sig + R_i)。忽略 r_ds、撤去负载时，R_o 常近似为 R_D。这些近似适用于这里的中频小信号模型。",
+          "uid": "ch04-46-card-ports"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "共栅电路中，源极输入电压升高。栅极是交流地，管子正常放大。这时输出怎么动？",
+          "options": [
+            "升高",
+            "降低",
+            "保持不动"
+          ],
+          "ok": 0,
+          "why": "u_gs 减小使漏流减小，R_D 上压降减小，漏极电位升高。",
+          "uid": "ch04-46-quiz-phase"
+        },
+        {
+          "q": "忽略 r_ds 和源极偏置支路，g_m = 4 mS 的共栅输入电阻约为多少？",
+          "options": [
+            "4 kΩ",
+            "4 Ω",
+            "250 Ω"
+          ],
+          "ok": 2,
+          "why": "从源极看入约为 1/g_m = 250 Ω。",
+          "uid": "ch04-46-quiz-input"
+        },
+        {
+          "q": "共栅端口电压增益为 +8，R_i 和源内阻相等。以信号源开路电压为输入算，总增益约多少？",
+          "options": [
+            "+8",
+            "+4",
+            "−4"
+          ],
+          "ok": 1,
+          "why": "先在源内阻和 R_i 之间分压，端口输入取到源开路电压的一半，再乘 +8。",
+          "uid": "ch04-46-quiz-loading"
+        }
+      ],
+      "stepIds": [
+        "ch04-46-step-1",
+        "ch04-46-step-2",
+        "ch04-46-step-3"
+      ],
+      "labId": "ch04-46-lab",
+      "walkId": "ch04-46-walk"
+    },
+    {
+      "n": "4.7",
+      "title": "场效应管三种组态放大电路的性能指标和特点比较",
+      "short": "三种组态比较",
+      "lead": "会分清从哪个脚进、从哪个脚出，就能用相位、输入电阻和带负载能力来选电路。",
+      "pages": [
+        35
+      ],
+      "paper": "35",
+      "source": {
+        "ppt": "4.3-4.6 三种组态场效应管放大电路分析.ppt",
+        "slides": "21",
+        "references": [
+          {
+            "pdf": "模电第二章讲义.pdf",
+            "pages": "35"
+          }
+        ],
+        "note": "本地讲义这一页给出与 BJT 组态的类比。三种场效应管组态的性能比较见老师课件。"
+      },
+      "lab": "对照共源、共漏和共栅",
+      "walk": "从三个小任务反推该选哪个组态",
+      "setup": "给三个信号链位置选 FET 放大级。每个位置都已经有合适的偏置，主要比较中频小信号行为。",
+      "steps": [
+        [
+          "先把小电压明显放大，可以反相。",
+          "常选共源。栅极输入、漏极输出。它有电压增益，输入电阻常较高，输出信号和输入反相。"
+        ],
+        [
+          "前面电压已经够大，需要接较低阻的负载。",
+          "常选共漏。栅极输入、源极输出。它是同相跟随器，较高的输入电阻减轻前级负担，较低的输出电阻适合缓冲。"
+        ],
+        [
+          "低内阻信号源之后需要同相放大。",
+          "可考虑共栅。源极输入、漏极输出。其输入电阻较小，用低内阻源可以减轻输入分压，漏极输出同相。"
+        ]
+      ],
+      "cards": [
+        {
+          "q": "从电路图认三种组态，先找哪个脚？",
+          "a": "先认信号进哪只脚、出哪只脚。剩下那一只就是两端共用的交流参考脚。",
+          "deep": "共源 G→D，S 公共。共漏 G→S，D 公共。共栅 S→D，G 公共。画交流通路时，恒定电源和充分旁路的节点都可以作为交流公共端。",
+          "uid": "ch04-47-card-identify"
+        },
+        {
+          "q": "只看输出相位和摆幅，可以怎么记？",
+          "a": "共源常把电压放大，也把方向翻过来。共漏让输出同方向跟着输入走，摆幅略小。共栅也同向，电压摆幅可以大于输入。",
+          "deep": "中频简化模型中，共源 A_v \u003c 0，共漏 0 \u003c A_v \u003c 1，共栅 A_v > 0。共源和共栅的增益绝对值能超过 1，是否超过 1 取决于 g_m 和相关负载。",
+          "uid": "ch04-47-card-phase"
+        },
+        {
+          "q": "三种组态谁更容易接高内阻信号源，谁更适合带负载？",
+          "a": "共源、共漏从栅极进，输入电阻常较大。共栅从源极进，输入电阻较低。想让电压较稳地送进低阻负载，常用共漏缓冲。",
+          "deep": "在典型偏置下，共源、共栅都用漏极输出，R_o 往往主要由漏极支路决定。共漏输出电阻通常较小，量级受 1/g_m 和源极偏置电阻限制。 课件还把共栅列作高频、宽带场合的选择之一，实际带宽需要结合电容和源、负载计算。",
+          "uid": "ch04-47-card-ports"
+        },
+        {
+          "q": "和第三章的三种晶体管接法能一一类比吗？",
+          "a": "可按公共参考脚和相位对应。共源像共射，共漏像共集，共栅像共基。这样可以先猜信号方向，再用这一章的公式确认。",
+          "deep": "对照关系用来识别拓扑和典型用途。BJT 小信号图主要用 r_be 和 βi_b，FET 小信号图使用 g_m u_gs 与 r_ds，栅极偏置网络、频率和负载会改变端口数据。",
+          "uid": "ch04-47-card-analogy"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "小信号从栅极进、从源极出，属于哪种组态？",
+          "options": [
+            "共漏",
+            "共源",
+            "共栅"
+          ],
+          "ok": 0,
+          "why": "剩下的漏极是公共交流端。",
+          "uid": "ch04-47-quiz-which"
+        },
+        {
+          "q": "要在高内阻源后接一个低阻负载，信号电压已经够大，一般先考虑哪种组态？",
+          "options": [
+            "共栅",
+            "共源",
+            "共漏"
+          ],
+          "ok": 2,
+          "why": "典型共漏级的输入电阻较高、输出电阻较低，适合缓冲。",
+          "uid": "ch04-47-quiz-choice"
+        },
+        {
+          "q": "两个电路都从漏极输出，按典型小信号方向，哪一种是同相的？",
+          "options": [
+            "栅极输入、源极公共",
+            "源极输入、栅极公共",
+            "源极和栅极同时接交流地"
+          ],
+          "ok": 1,
+          "why": "从源极输入、栅极公共是共栅，它的电压增益为正。",
+          "uid": "ch04-47-quiz-opposite"
+        }
+      ],
+      "stepIds": [
+        "ch04-47-step-1",
+        "ch04-47-step-2",
+        "ch04-47-step-3"
+      ],
+      "labId": "ch04-47-lab",
+      "walkId": "ch04-47-walk"
+    }
+  ],
+  "coach": {
+    "4.1": [
+      {
+        "q": "N 沟道 JFET 工作在反偏栅结的正常范围。栅极从 −1 V 调到 −2 V，源极固定。说出栅结、沟道和漏极电流各怎样变化。",
+        "hint": "想想 PN 结反偏增大时，耗尽区会怎样。",
+        "points": [
+          "栅结反偏增大，耗尽区扩宽",
+          "沟道变窄，I_D 有减小趋势"
+        ],
+        "model": "栅压相对源极更负，使反偏更强，耗尽区扩宽。能导电的沟道变窄，漏极电流会减小。",
+        "rescue": {
+          "q": "这里栅结反偏增强时，耗尽区会怎样？",
+          "options": [
+            "变宽",
+            "变窄"
+          ],
+          "ok": 0,
+          "why": "增大反偏会把耗尽区向两侧扩展。"
+        },
+        "context": "N 沟道 JFET 工作在反偏栅结的正常范围。栅极从 −1 V 调到 −2 V，源极固定。",
+        "prompt": "说出栅结、沟道和漏极电流各怎样变化。",
+        "uid": "ch04-41-coach-why-narrow"
+      },
+      {
+        "q": "有位同学在 JFET 输出图上看到漏端预夹断，便认为漏极已经没有电流。用自己的话解释预夹断时电流去了哪里，以及哪种情形才会截止。",
+        "hint": "先区分沟道的一头被挤窄，和被栅压压到关断。",
+        "points": [
+          "漏端预夹断后，电场仍把载流子送到漏极",
+          "U_GS 到 U_GS(off) 时，才按栅控截止处理"
+        ],
+        "model": "漏端预夹断后，载流子仍能被漏端电场拉过去。栅压达到 U_GS(off)、沟道无法再提供正常导电通路时，I_D 才近似为零。",
+        "rescue": {
+          "q": "漏端预夹断后的正常恒流区内，I_D 还存在吗？",
+          "options": [
+            "一定为零",
+            "存在"
+          ],
+          "ok": 1,
+          "why": "预夹断发生在沟道漏端，载流子仍可在强电场下到达漏极。"
+        },
+        "context": "有位同学在 JFET 输出图上看到漏端预夹断，便认为漏极已经没有电流。",
+        "prompt": "用自己的话解释预夹断时电流去了哪里，以及哪种情形才会截止。",
+        "uid": "ch04-41-coach-two-pinches"
+      },
+      {
+        "q": "N 沟道 JFET 的 I_DSS = 12 mA，U_GS(off) = −6 V。U_GS = −3 V，U_DS = 6 V。先判断能不能套恒流区公式，再估算 I_D。",
+        "hint": "边界由 U_GS − U_GS(off) 决定。再把栅压比值代入平方。",
+        "points": [
+          "预夹断边界约 3 V，6 V 在恒流区",
+          "理想 I_D = 3 mA"
+        ],
+        "model": "U_DS = 6 V 大于预夹断边界 (−3) − (−6) = 3 V。用转移式算得 I_D ≈ 12 × (1 − 1/2)² mA = 3 mA。",
+        "rescue": {
+          "q": "方括号里为 1/2，平方结果是多少？",
+          "options": [
+            "1/4",
+            "1/2"
+          ],
+          "ok": 0,
+          "why": "把 1/2 乘以 1/2，得到 1/4。"
+        },
+        "context": "N 沟道 JFET 的 I_DSS = 12 mA，U_GS(off) = −6 V。U_GS = −3 V，U_DS = 6 V。",
+        "prompt": "先判断能不能套恒流区公式，再估算 I_D。",
+        "uid": "ch04-41-coach-number"
+      }
+    ],
+    "4.2": [
+      {
+        "q": "一只 N 沟道增强型 MOS 管和一只 N 沟道耗尽型 MOS 管，各自接好合适的正漏源电压。现在两管 U_GS 都是 0。说说谁已经有沟道，谁还要靠栅压把沟道引出来。",
+        "hint": "想增强型要先开路，耗尽型有一条现成的路。",
+        "points": [
+          "增强型在 U_GS = 0 时理想截止",
+          "耗尽型在 U_GS = 0 时已有沟道，能流过漏极电流"
+        ],
+        "model": "增强型要先给足够的正 U_GS 才形成反型沟道。耗尽型原来就有沟道，漏源有合适偏压时，不加栅源电压也能通电。",
+        "rescue": {
+          "q": "哪一种预先做了沟道？",
+          "options": [
+            "增强型",
+            "耗尽型"
+          ],
+          "ok": 1,
+          "why": "耗尽型这个名字来自栅压能把已有沟道耗尽。"
+        },
+        "context": "一只 N 沟道增强型 MOS 管和一只 N 沟道耗尽型 MOS 管，各自接好合适的正漏源电压。现在两管 U_GS 都是 0。",
+        "prompt": "说说谁已经有沟道，谁还要靠栅压把沟道引出来。",
+        "uid": "ch04-42-coach-contrast"
+      },
+      {
+        "q": "N 沟道增强型 MOS 管的 U_GS(th) = 2 V，U_GS = 3.5 V，漏源电压先设 1 V，再调到 3 V。分别判断两次的工作区，并写出边界是怎么算的。",
+        "hint": "先算栅压超过门槛多少，再让两个 U_DS 和这个差值比较。",
+        "points": [
+          "边界为 U_GS − U_GS(th) = 1.5 V",
+          "1 V 时在可变电阻区，3 V 时在恒流区"
+        ],
+        "model": "U_GS 已超过 2 V。预夹断边界约为 3.5 − 2 = 1.5 V，1 V 在边界以下，3 V 在边界以上。",
+        "rescue": {
+          "q": "该管处于恒流区要求 U_DS 至少到多少？",
+          "options": [
+            "约 1.5 V",
+            "约 3.5 V"
+          ],
+          "ok": 0,
+          "why": "边界由 U_GS 减去开启电压得到。"
+        },
+        "context": "N 沟道增强型 MOS 管的 U_GS(th) = 2 V，U_GS = 3.5 V，漏源电压先设 1 V，再调到 3 V。",
+        "prompt": "分别判断两次的工作区，并写出边界是怎么算的。",
+        "uid": "ch04-42-coach-overdrive"
+      },
+      {
+        "q": "在恒流区的某个静态点附近，固定 U_DS，U_GS 从 3.00 V 增至 3.02 V，I_D 大约增加 60 μA。用增量估出 g_m，然后解释它的意思。",
+        "hint": "把漏极电流增量除以栅源电压增量。",
+        "points": [
+          "g_m 约为 3 mS",
+          "它描述 Q 点附近固定 U_DS 时，U_GS 改变引起的 I_D 变化"
+        ],
+        "model": "60 μA / 20 mV = 3 mS。这个数是该静态点附近转移曲线的斜率，在小范围内可用来估算漏极电流变化。",
+        "rescue": {
+          "q": "跨导的基本单位是什么？",
+          "options": [
+            "欧姆 Ω",
+            "西门子 S"
+          ],
+          "ok": 1,
+          "why": "跨导由电流除以电压，其单位是西门子。"
+        },
+        "context": "在恒流区的某个静态点附近，固定 U_DS，U_GS 从 3.00 V 增至 3.02 V，I_D 大约增加 60 μA。",
+        "prompt": "用增量估出 g_m，然后解释它的意思。",
+        "uid": "ch04-42-coach-slope"
+      }
+    ],
+    "4.3": [
+      {
+        "q": "你想用一条直线近似 MOS 管在恒流区的转移特性。说明这条直线在哪儿取，斜率是什么，什么情况会失准。",
+        "hint": "从偏置已经求出的静态点出发，只往左右动一点。",
+        "points": [
+          "取 Q 点处的局部切线，斜率是 g_m",
+          "信号摆幅太大或跨工作区时会失准"
+        ],
+        "model": "先找静态工作点。在它附近用切线近似，斜率就是固定 U_DS 时的跨导 g_m。信号跑远或进入截止区时，曲线原来的弯曲不能忽略。",
+        "rescue": {
+          "q": "g_m 应该用哪个位置的斜率？",
+          "options": [
+            "静态工作点附近",
+            "整条曲线首尾的平均斜率"
+          ],
+          "ok": 0,
+          "why": "放大电路实际围绕选好的静态点工作。"
+        },
+        "context": "你想用一条直线近似 MOS 管在恒流区的转移特性。",
+        "prompt": "说明这条直线在哪儿取，斜率是什么，什么情况会失准。",
+        "uid": "ch04-43-coach-local"
+      },
+      {
+        "q": "恒流区内，Q 点给出 g_m = 4 mS。小信号分析中忽略 r_ds。u_gs 增加 3 mV 时，算出并解释漏极电流的变化。",
+        "hint": "把跨导和栅源小信号电压相乘，留意单位。",
+        "points": [
+          "漏极电流增加约 12 μA",
+          "该结果是相对于静态漏流的变化量"
+        ],
+        "model": "Δi_d ≈ 4 mS × 3 mV = 12 μA。这是漏极电流相对静态 I_DQ 增加的量。",
+        "rescue": {
+          "q": "算出的 12 μA 是静态电流还是交流变化量？",
+          "options": [
+            "静态电流",
+            "交流变化量"
+          ],
+          "ok": 1,
+          "why": "小信号受控源使用的是 u_gs 的变化量。"
+        },
+        "context": "恒流区内，Q 点给出 g_m = 4 mS。小信号分析中忽略 r_ds。",
+        "prompt": "u_gs 增加 3 mV 时，算出并解释漏极电流的变化。",
+        "uid": "ch04-43-coach-number"
+      },
+      {
+        "q": "固定 U_GS，在 Q 点附近把 U_DS 提高 0.20 V，I_D 增大 4 μA。从这两个变化量估算 r_ds，并说明它画在哪里。",
+        "hint": "电阻要用电压变化量除以电流变化量。观察变化发生在哪两个端子之间。",
+        "points": [
+          "r_ds ≈ 50 kΩ",
+          "画在漏极和源极之间，与受控电流源并联"
+        ],
+        "model": "r_ds ≈ 0.20 V/(4 μA) = 50 kΩ。它描述漏源电压带来的漏极电流变化，与 g_m u_gs 受控源并联在漏源之间。",
+        "rescue": {
+          "q": "估算这个 r_ds 时要固定哪个量？",
+          "options": [
+            "U_GS",
+            "I_D"
+          ],
+          "ok": 0,
+          "why": "固定 U_GS 才能只看到漏源电压对电流的作用。"
+        },
+        "context": "固定 U_GS，在 Q 点附近把 U_DS 提高 0.20 V，I_D 增大 4 μA。",
+        "prompt": "从这两个变化量估算 r_ds，并说明它画在哪里。",
+        "uid": "ch04-43-coach-resistance"
+      }
+    ],
+    "4.4": [
+      {
+        "q": "一只已正确偏置的共源放大管，源极是交流地，漏极经 R_D 接电源。说出栅极向上摆时，漏极电流、R_D 压降和输出电压的变化。",
+        "hint": "想想流经 R_D 的电流增大时，电源到漏极之间少了多少电压。",
+        "points": [
+          "栅压升高使漏极电流和 R_D 压降增加",
+          "漏极电位降低，所以输出反相"
+        ],
+        "model": "源极交流固定，栅压升高使 u_gs 增加，漏极电流增加。R_D 压降变大，漏极电压降低。",
+        "rescue": {
+          "q": "共源电压增益的符号是什么？",
+          "options": [
+            "正",
+            "负"
+          ],
+          "ok": 1,
+          "why": "共源从漏极取输出，输入升高时漏极输出下降。"
+        },
+        "context": "一只已正确偏置的共源放大管，源极是交流地，漏极经 R_D 接电源。",
+        "prompt": "说出栅极向上摆时，漏极电流、R_D 压降和输出电压的变化。",
+        "uid": "ch04-44-coach-phase-chain"
+      },
+      {
+        "q": "某增强型 NMOS 静态有 U_GSQ = 4 V、U_GS(th) = 2 V、U_DSQ = 1 V。判断能不能把它按课上的恒流区小信号放大来算。",
+        "hint": "比较 U_DSQ 和 U_GSQ − U_GS(th)。",
+        "points": [
+          "U_GSQ 已超过阈值，预夹断边界是 2 V",
+          "U_DSQ = 1 V 低于边界，不能按恒流区假设"
+        ],
+        "model": "虽然 4 V 大于 2 V、沟道已经形成，但漏源电压 1 V 小于预夹断边界 2 V。应按可变电阻区分析。",
+        "rescue": {
+          "q": "先按恒流区模型得到结果后，应检查工作区吗？",
+          "options": [
+            "应该",
+            "无需检查"
+          ],
+          "ok": 0,
+          "why": "计算使用的式子只有在相应工作区成立。"
+        },
+        "context": "某增强型 NMOS 静态有 U_GSQ = 4 V、U_GS(th) = 2 V、U_DSQ = 1 V。",
+        "prompt": "判断能不能把它按课上的恒流区小信号放大来算。",
+        "uid": "ch04-44-coach-check"
+      },
+      {
+        "q": "中频共源电路源极旁路充分。g_m = 3 mS，R_D = 6 kΩ，R_L = 3 kΩ，忽略 r_ds。求带载的 A_v，并解释用 R_D ∥ R_L 的原因。",
+        "hint": "看看交流通路里，两只电阻是否接到相同的两个节点。",
+        "points": [
+          "交流负载为 2 kΩ",
+          "A_v ≈ −6，负号表示反相"
+        ],
+        "model": "中频耦合电容近似短路，电源视为交流地，R_D 和 R_L 从漏极接到交流地。等效 2 kΩ，A_v ≈ −3 mS × 2 kΩ = −6。",
+        "rescue": {
+          "q": "R_L 经过耦合电容接入，中频增益使用哪个电阻？",
+          "options": [
+            "仅 R_D",
+            "R_D ∥ R_L"
+          ],
+          "ok": 1,
+          "why": "交流下两条支路都通向交流地。"
+        },
+        "context": "中频共源电路源极旁路充分。g_m = 3 mS，R_D = 6 kΩ，R_L = 3 kΩ，忽略 r_ds。",
+        "prompt": "求带载的 A_v，并解释用 R_D ∥ R_L 的原因。",
+        "uid": "ch04-44-coach-loaded"
+      }
+    ],
+    "4.5": [
+      {
+        "q": "一个共漏电路的电压增益是 0.8，栅极的小信号峰值是 50 mV。算源极小信号峰值，并说明输出方向。",
+        "hint": "0.8 是正数。让输入幅度乘以它。",
+        "points": [
+          "源极输出峰值约 40 mV",
+          "增益为正，输出与输入同相"
+        ],
+        "model": "50 mV × 0.8 = 40 mV。符号为正，栅极向上摆时源极也向上摆。",
+        "rescue": {
+          "q": "共漏输出从哪个端子取？",
+          "options": [
+            "源极",
+            "漏极"
+          ],
+          "ok": 0,
+          "why": "共漏把漏极作为公共交流端，源极用来输出。"
+        },
+        "context": "一个共漏电路的电压增益是 0.8，栅极的小信号峰值是 50 mV。",
+        "prompt": "算源极小信号峰值，并说明输出方向。",
+        "uid": "ch04-45-coach-follow"
+      },
+      {
+        "q": "课件中的自偏置源极跟随器有 V_DD = 15 V、R_S = 1 kΩ、U_GQ = 0。N 沟道器件的关断电压为 −8 V，联立方程得到 I_DQ = 4 mA 或 16 mA。选合适的根，再算对应的 U_DSQ。",
+        "hint": "把两个电流候选代入 U_GSQ = −I_DQ R_S。检查哪个电压落在转移式的有效区间。",
+        "points": [
+          "取 4 mA，16 mA 使 U_GSQ = −16 V，已经越过关断",
+          "U_DSQ = 15 − 4 = 11 V，满足恒流区判据"
+        ],
+        "model": "4 mA 给 U_GSQ = −4 V，尚未截止，U_DSQ = 15 V − 4 mA × 1 kΩ = 11 V。这高于预夹断边界 4 V。16 mA 给 −16 V，超出了转移式的有效区间。",
+        "rescue": {
+          "q": "−16 V 比 −8 V 更负，在这个模型下应当出现什么？",
+          "options": [
+            "更强的导电",
+            "截止"
+          ],
+          "ok": 1,
+          "why": "负的栅源电压超过关断值时，N 沟道耗尽型管会截止。"
+        },
+        "context": "课件中的自偏置源极跟随器有 V_DD = 15 V、R_S = 1 kΩ、U_GQ = 0。N 沟道器件的关断电压为 −8 V，联立方程得到 I_DQ = 4 mA 或 16 mA。",
+        "prompt": "选合适的根，再算对应的 U_DSQ。",
+        "uid": "ch04-45-coach-roots"
+      },
+      {
+        "q": "一个高内阻的信号源，直接接低阻负载时电压掉了很多。为什么在两者之间加入共漏级会有帮助？用 R_i 和 R_o 解释。",
+        "hint": "分别从信号源和负载两边看共漏级。",
+        "points": [
+          "较高 R_i 可减少信号源上的电压损失",
+          "较低 R_o 可减轻低阻负载拖低输出的程度"
+        ],
+        "model": "信号源接到共漏的高输入电阻，产生的分压损失较少。负载接到共漏较低的输出电阻，获得的电压更接近空载输出。",
+        "rescue": {
+          "q": "低输出电阻更适合带低阻负载吗？",
+          "options": [
+            "适合",
+            "不适合"
+          ],
+          "ok": 0,
+          "why": "输出电阻较低时，接入负载前后的输出电压变化较小。"
+        },
+        "context": "一个高内阻的信号源，直接接低阻负载时电压掉了很多。",
+        "prompt": "为什么在两者之间加入共漏级会有帮助？用 R_i 和 R_o 解释。",
+        "uid": "ch04-45-coach-buffer"
+      }
+    ],
+    "4.6": [
+      {
+        "q": "共栅 NMOS 的栅极是交流地，源极出现向上的小电压变化。用 u_gs、漏极电流和 R_D 压降解释输出方向。",
+        "hint": "栅极没有变，源极高一点时，栅极减源极的结果怎样？",
+        "points": [
+          "u_gs 减小，漏极电流减小",
+          "R_D 压降减小，漏极输出升高"
+        ],
+        "model": "栅极交流固定，源极升高让 u_gs 减小，漏流变小。R_D 压降随之变小，漏极输出升高，所以同相。",
+        "rescue": {
+          "q": "共栅的电压增益是正还是负？",
+          "options": [
+            "负",
+            "正"
+          ],
+          "ok": 1,
+          "why": "输入升高时，漏极输出也升高。"
+        },
+        "context": "共栅 NMOS 的栅极是交流地，源极出现向上的小电压变化。",
+        "prompt": "用 u_gs、漏极电流和 R_D 压降解释输出方向。",
+        "uid": "ch04-46-coach-phase"
+      },
+      {
+        "q": "共栅放大管 g_m = 5 mS，忽略 r_ds 与源极偏置支路。信号源内阻为 800 Ω。求源极看入电阻，再算信号源开路电压有多少能送到源极。",
+        "hint": "先算 1/g_m，再用输入电阻除以两只串联电阻之和。",
+        "points": [
+          "R_i ≈ 200 Ω",
+          "输入得到源开路电压的 1/5"
+        ],
+        "model": "1/g_m = 200 Ω。输入端电压为源开路电压的 200/(800 + 200) = 0.2 倍。",
+        "rescue": {
+          "q": "把信号源换成更低内阻的，源极分到的比例怎样变？",
+          "options": [
+            "变大",
+            "变小"
+          ],
+          "ok": 0,
+          "why": "分母里的源内阻减小，端口电压占比增加。"
+        },
+        "context": "共栅放大管 g_m = 5 mS，忽略 r_ds 与源极偏置支路。信号源内阻为 800 Ω。",
+        "prompt": "求源极看入电阻，再算信号源开路电压有多少能送到源极。",
+        "uid": "ch04-46-coach-input"
+      },
+      {
+        "q": "中频共栅电路的 g_m = 4 mS，R_D = R_L = 2 kΩ，忽略 r_ds。算从源极到漏极的电压增益，并给出相位。",
+        "hint": "两只 2 kΩ 在交流图里都从漏极接到交流地。",
+        "points": [
+          "交流负载为 1 kΩ",
+          "A_v ≈ +4，同相"
+        ],
+        "model": "R_D ∥ R_L = 1 kΩ，A_v ≈ +4 mS × 1 kΩ = +4。增益为正，表示输出与输入同相。",
+        "rescue": {
+          "q": "算带载增益时，用哪一个漏极交流负载？",
+          "options": [
+            "R_D + R_L",
+            "R_D ∥ R_L"
+          ],
+          "ok": 1,
+          "why": "接入负载后两只电阻在交流线上并联。"
+        },
+        "context": "中频共栅电路的 g_m = 4 mS，R_D = R_L = 2 kΩ，忽略 r_ds。",
+        "prompt": "算从源极到漏极的电压增益，并给出相位。",
+        "uid": "ch04-46-coach-gain"
+      }
+    ],
+    "4.7": [
+      {
+        "q": "你要把一个较高内阻的传感器接至较低电阻的负载，原始信号的幅度已经足够。选一类 FET 组态，并从输入和输出两边说理由。",
+        "hint": "要让源少被拉住，同时让带上负载后的输出稳一点。",
+        "points": [
+          "选共漏或源极跟随器",
+          "较高的 R_i 和较低的 R_o 适合缓冲"
+        ],
+        "model": "共漏的输入从栅极进，偏置设计合适时输入电阻较大，能减轻对传感器的负担。源极输出电阻小，带上低阻负载更稳。",
+        "rescue": {
+          "q": "这项任务需要把电压放大很多吗？",
+          "options": [
+            "不需要",
+            "需要"
+          ],
+          "ok": 0,
+          "why": "输入幅度已经够了，主要要处理负载和源的阻抗。"
+        },
+        "context": "你要把一个较高内阻的传感器接至较低电阻的负载，原始信号的幅度已经足够。",
+        "prompt": "选一类 FET 组态，并从输入和输出两边说理由。",
+        "uid": "ch04-47-coach-choose"
+      },
+      {
+        "q": "共源和共栅都从漏极输出。说出两者各自从哪儿输入，并比较输出相位。",
+        "hint": "公共端是第三只脚。对照栅压或源压增大时的 u_gs。",
+        "points": [
+          "共源 G 输入，输出反相",
+          "共栅 S 输入，输出同相"
+        ],
+        "model": "共源的输入在栅极，栅极上升使漏流增大，漏极电压下降。共栅的输入在源极，源极上升使 u_gs、漏流减小，漏极电压上升。",
+        "rescue": {
+          "q": "共栅小信号从哪个端子进？",
+          "options": [
+            "栅极",
+            "源极"
+          ],
+          "ok": 1,
+          "why": "栅极是公共交流端，源极用来输入。"
+        },
+        "context": "共源和共栅都从漏极输出。",
+        "prompt": "说出两者各自从哪儿输入，并比较输出相位。",
+        "uid": "ch04-47-coach-phase"
+      },
+      {
+        "q": "系统需要把小信号先放大电压，再带一个低阻负载。用两个不同的 FET 组态排出先后顺序，并说出各自的作用。",
+        "hint": "先找能放大电压且输入阻抗常较高的级，再找输出电阻较小的级。",
+        "points": [
+          "第一级用共源提高电压幅度",
+          "第二级用共漏缓冲并带负载"
+        ],
+        "model": "先用共源放大电压，再用共漏带负载。共漏的输入电阻较高，对前一级的负载效应较小。求总增益时应使用两级接好以后的带载增益。",
+        "rescue": {
+          "q": "两级都接好后，总增益应该用哪个值计算？",
+          "options": [
+            "每级接上实际负载时的增益",
+            "两级各自的空载增益"
+          ],
+          "ok": 0,
+          "why": "后一级本身也给前一级提供一个负载。"
+        },
+        "context": "系统需要把小信号先放大电压，再带一个低阻负载。",
+        "prompt": "用两个不同的 FET 组态排出先后顺序，并说出各自的作用。",
+        "uid": "ch04-47-coach-cascade"
+      }
+    ]
+  }
+}
+</script>
+<script>
+(() => {
+  'use strict';
+
+  const {ink,teal,rust,paper,grid,format,label,line,dot,box,svg,ground,choice,range,layout,figures,bindChoices,bindRanges,output,waveform} = window.ModianLabUI;
+  const volts = value => `${format(value,1).replace('-', '−')} V`;
+  const signed = (value, decimals) => `${value < 0 ? '−' : '+'}${format(Math.abs(value),decimals)}`;
+
+  // Both transfer laws here use the coefficient convention I_D,sat = k(V_GS − V_T)².
+  function channelCurrent(overdrive, drain, coefficient) {
+    if (overdrive <= 0) return 0;
+    const modeledDrain = Math.min(drain,overdrive);
+    return coefficient * modeledDrain * (2 * overdrive - modeledDrain);
+  }
+
+  function currentChart({xMin = 0,xMax,yMax,xTicks,yTicks,xTitle}) {
+    const left = 53, right = 414, top = 32, bottom = 170;
+    const x = value => left + (value - xMin) * (right - left) / (xMax - xMin);
+    const y = value => bottom - value * (bottom - top) / yMax;
+    let body = label(19,21,'漏极电流 / mA',{bold:true}) + label(right,217,xTitle,{align:'end',bold:true});
+    for (const tick of xTicks) body += line(x(tick),top,x(tick),bottom,grid,true) + label(x(tick),192,tick,{align:'middle',size:14});
+    for (const tick of yTicks) body += line(left,y(tick),right,y(tick),grid,true) + label(left-9,y(tick)+4,tick,{align:'end',size:14});
+    body += line(left,top,left,bottom) + line(left,bottom,right,bottom);
+    function curve(getCurrent, color = teal, dashed = false, start = xMin, end = xMax) {
+      const points = Array.from({length:81},(_,i) => {
+        const v = start + (end-start) * i / 80;
+        return `${format(x(v),1)},${format(y(getCurrent(v)),1)}`;
+      }).join(' ');
+      return `<polyline points="${points}" fill="none" stroke="${color}" stroke-width="${dashed ? '1.4' : '2.8'}"${dashed ? ' stroke-dasharray="5 5"' : ''}/>`;
+    }
+    return {x,y,body,curve};
+  }
+
+  function drainChart(overdrive,drain,maxCurrent,horizontalTicks,ghostCurves = []) {
+    const chart = currentChart({xMax:6,yMax:maxCurrent,xTicks:[0,1,2,3,4,5,6],yTicks:horizontalTicks,xTitle:'漏源电压 U_DS / V'});
+    const activeCurve = value => channelCurrent(overdrive,value,.5);
+    let body = chart.body;
+    for (const ghost of ghostCurves) body += chart.curve(value => channelCurrent(ghost,value,.5),'#b9c6b6',true);
+    if (overdrive > 0 && overdrive < 6) {
+      const knee = chart.x(overdrive);
+      body += line(knee,chart.y(0),knee,chart.y(activeCurve(overdrive)),rust,true);
+    }
+    return body + chart.curve(activeCurve) + dot(chart.x(drain),chart.y(activeCurve(drain)),rust,5.2);
+  }
+
+  function jfet(el) {
+    layout(el,'调栅压，看看 JFET 的电流平台怎么变','先固定漏源电压，往负方向调栅源电压。再固定栅源电压，观察漏源电压何时把电流推上平台。',
+      range('栅源电压','gate',-4,0,.5,-2)+range('漏源电压','drain',0,6,.5,3),
+      '示例是 N 沟道 JFET，I<sub>DSS</sub> = 8 mA，U<sub>GS(off)</sub> = −4 V。栅极 PN 结在实验范围内保持零偏或反偏。进入恒流区后，I<sub>D</sub> ≈ 8 mA × [1 − U<sub>GS</sub>/(−4 V)]²。恒流区边界近似是 U<sub>DS</sub> = U<sub>GS</sub> − U<sub>GS(off)</sub>。模型忽略沟道长度调制和击穿。');
+    bindRanges(el,({gate,drain}) => {
+      const overdrive = gate + 4;
+      const current = channelCurrent(overdrive,drain,.5);
+      const region = overdrive <= 0 ? '截止区' : drain < overdrive ? '可变电阻区' : '恒流区';
+      const reason = overdrive <= 0 ? '整个沟道接近关断。' : drain < overdrive ?
+        '还没达到漏端预夹断，增大漏源电压会让电流继续上升。' : '漏端达到预夹断，沟道里仍有电流。继续加大漏源电压时，图中电流近似不变。';
+      const body = drainChart(overdrive,drain,8,[0,2,4,6,8],[1,2,3,4]);
+      output(el,'gate',volts(gate));
+      output(el,'drain',volts(drain));
+      figures(el,svg(230,'JFET 输出特性，灰色虚线为其他栅压的参考曲线，圆点是所选偏置',body),
+        `<b>${region}，漏极电流 ${format(current)} mA。</b> ${reason}`);
+    });
+  }
+
+  function mos(el) {
+    layout(el,'栅压为零时，两种 NMOS 都能导通吗？','先用 0 V 栅源电压切换增强型和耗尽型。再扫动栅压和漏压，看看截止、可变电阻与饱和怎样切换。',
+      choice('选择 N 沟道 MOS 管',['增强型','耗尽型'])+range('栅源电压','gate',-3,5,.5,0)+range('漏源电压','drain',0,6,.5,5),
+      '本实验取增强型阈值 U<sub>T</sub> = +2 V，耗尽型 U<sub>T</sub> = −2 V。两种器件都用简化模型，过驱动电压 U<sub>OV</sub> = U<sub>GS</sub> − U<sub>T</sub>。U<sub>OV</sub> ≤ 0 时近似截止。U<sub>OV</sub> > 0 且 U<sub>DS</sub> ≥ U<sub>OV</sub> 时进入饱和区，I<sub>D</sub> ≈ kU<sub>OV</sub>²，其中 k = 0.5 mA/V²。绝缘栅在稳态下近似无直流电流。');
+    let enhancement = true;
+    let bias;
+    function render() {
+      const {gate,drain} = bias;
+      const threshold = enhancement ? 2 : -2;
+      const overdrive = gate - threshold;
+      const region = overdrive <= 0 ? '截止区' : drain < overdrive ? '可变电阻区' : '饱和区';
+      const channel = enhancement ? '增强型需要足够正的栅压才能形成沟道。' : '耗尽型在栅压为零时已经有沟道，足够负的栅压能让它截止。';
+      const body = enhancement ? drainChart(overdrive,drain,5,[0,1,2,3,4,5]) : drainChart(overdrive,drain,25,[0,5,10,15,20,25]);
+      output(el,'gate',volts(gate));
+      output(el,'drain',volts(drain));
+      figures(el,svg(230,`阈值 ${volts(threshold)} 的 NMOS 输出特性，圆点为所选偏置`,body),
+        `<b>${region}，阈值 ${volts(threshold)}，漏极电流 ${format(channelCurrent(overdrive,drain,.5))} mA。</b> ${channel}`);
+    }
+    bindRanges(el,values => { bias = values; render(); });
+    bindChoices(el,index => { enhancement = index === 0; render(); });
+  }
+
+  function tangent(el) {
+    layout(el,'为什么一条切线能代替弯曲的特性？','先选静态栅压 Q，再给栅压加一点变化，比较曲线和切线算出的电流变化。',
+      range('静态栅源电压','gate',2.5,5,.1,4)+range('栅压改变量','offset',-200,200,25,100),
+      '以饱和区增强型 NMOS 为例。取 U<sub>T</sub> = 2 V，I<sub>D</sub> = 0.5 mA/V² × (U<sub>GS</sub> − U<sub>T</sub>)²，漏源电压固定在 5 V。Q 点处斜率 g<sub>m</sub> = 2k(U<sub>GSQ</sub> − U<sub>T</sub>)。增量电路把漏电流近似为 i<sub>d</sub> = g<sub>m</sub>u<sub>gs</sub>，小信号范围越小，切线与曲线越接近。此处忽略与漏压变化有关的输出电阻支路。');
+    bindRanges(el,({gate,offset}) => {
+      const current = v => .5 * (v - 2) ** 2;
+      const gm = gate - 2;
+      const delta = offset / 1000;
+      const baseline = current(gate);
+      const expected = gm * delta;
+      const actual = current(gate + delta) - baseline;
+      const chart = currentChart({xMin:2,xMax:5.4,yMax:6,xTicks:[2,3,4,5],yTicks:[0,2,4,6],xTitle:'栅源电压 U_GS / V'});
+      const nearQ = voltage => baseline + gm * (voltage - gate);
+      const x = chart.x(gate), y = chart.y(baseline);
+      const body = chart.body + chart.curve(current) +
+        chart.curve(nearQ,rust,true,gate-.25,gate+.35) + dot(x,y,ink,5) + label(x+10,y-9,'Q',{size:15,bold:true}) +
+        dot(chart.x(gate+delta),chart.y(baseline+actual),teal,3) +
+        label(88,53,'转移曲线',{color:teal,size:15}) + label(88,74,'Q 点切线',{color:rust,size:15});
+      output(el,'gate',volts(gate));
+      output(el,'offset',`${offset > 0 ? '+' : ''}${String(offset).replace('-', '−')} mV`);
+      figures(el,svg(230,'转移特性和 Q 点切线，实心点为实际工作位置',body),
+        `<b>Q 点电流 ${format(baseline)} mA，跨导 ${format(gm,1)} mS。</b> 曲线给出 ΔI<sub>D</sub> = ${signed(actual,3)} mA，切线给出 ${signed(expected,3)} mA。`);
+    });
+  }
+
+  function fet(x,y) {
+    return `<g transform="translate(${x} ${y})"><path class="mdl-wire" d="M-43 0 H-4 M0 -24 V24 M0 -19 H16 V-39 M0 19 H16 V39"/><path d="M-2 0 L-13 -5 L-13 5 Z" fill="${ink}"/></g>`;
+  }
+
+  function topology(mode,x,y) {
+    const gate = mode === 'CG' ? ground(-43,0) : label(-48,5,'输入',{align:'end',color:teal,size:15});
+    const drain = mode === 'CD' ? '<path class="mdl-wire" d="M16 -39 H46"/>' + ground(46,-39) : label(26,-34,'输出',{color:rust,size:15});
+    const source = mode === 'CS' ? ground(16,39) : label(26,46,mode === 'CD' ? '输出' : '输入',{color:mode==='CD' ? rust : teal,size:15});
+    const common = {CS:'源极',CD:'漏极',CG:'栅极'}[mode];
+    return `<g transform="translate(${x} ${y})">${fet(0,0)}${gate}${drain}${source}${label(3,76,`交流公共端：${common}`,{align:'middle',size:14})}</g>`;
+  }
+
+  function verticalResistor(x,top,bottom) {
+    const middle = (top+bottom)/2;
+    return line(x,top,x,middle-12) + `<rect x="${x-6}" y="${middle-12}" width="12" height="24" fill="${paper}" stroke="${ink}" stroke-width="2"/>`+line(x,middle+12,x,bottom);
+  }
+
+  function commonSource(el) {
+    layout(el,'共源电路接上旁路电容，电压增益会怎样？','拖动负载电阻，比较同一负载下旁路和不旁路时的增益，留意直流工作点有没有动。',
+      choice('切换源极旁路',['无旁路','有旁路'],1)+range('负载电阻','load',1,12,.5,6),
+      '以 N 沟道 JFET 自偏置为例。V<sub>DD</sub> = 12 V，I<sub>DSS</sub> = 8 mA，U<sub>GS(off)</sub> = −4 V，R<sub>D</sub> = 3 kΩ，R<sub>S</sub> = 1 kΩ，栅极直流为 0 V。I<sub>DQ</sub> = 2 mA，U<sub>GSQ</sub> = −2 V，U<sub>DSQ</sub> = 4 V，所以 g<sub>m</sub> ≈ 2 mS。负载经电容耦合。忽略场效应管的输出电阻，中频 A<sub>v</sub> = −g<sub>m</sub>(R<sub>D</sub> ∥ R<sub>L</sub>)/(1 + g<sub>m</sub>R<sub>S,ac</sub>)，有旁路时 R<sub>S,ac</sub> ≈ 0。');
+    let bypass = true;
+    let load;
+    function render() {
+      const effective = 3 * load / (3 + load);
+      const gain = -2 * effective / (1 + 2 * (bypass ? 0 : 1));
+      let body = fet(100,121) + verticalResistor(116,19,82) + verticalResistor(116,160,218) + ground(116,218) +
+        label(116,15,'V_DD',{align:'middle',bold:true}) + label(132,56,'R_D 3 kΩ',{size:15}) + label(132,199,'R_S 1 kΩ',{size:15}) +
+        line(12,121,57,121) + dot(12,121) + dot(22,121) + label(10,104,'输入',{color:teal,size:15}) +
+        verticalResistor(22,121,218) + line(22,218,116,218) +
+        label(57,108,'G',{bold:true}) + label(33,167,'R_G',{size:15}) + dot(116,82) + dot(116,160) + dot(116,218) +
+        line(116,82,177,82) + line(177,70,177,94) + line(187,70,187,94) + line(187,82,236,82) +
+        verticalResistor(236,82,218) + line(116,218,236,218) + label(236,67,'输出',{align:'middle',color:rust,size:15}) +
+        label(248,153,`R_L ${format(load,1)} kΩ`,{size:15});
+      if (bypass) {
+        body += line(116,160,66,160) + line(66,160,66,182) + line(56,182,76,182) + line(56,191,76,191) +
+          line(66,191,66,218) + dot(66,218) + label(83,192,'C_S',{size:15});
+      }
+      body += box(312,44,113,68,'#e7efe4') + label(368,67,'电压增益',{align:'middle',size:15}) +
+        label(368,95,signed(gain,2),{align:'middle',size:24,bold:true});
+      output(el,'load',`${format(load,1)} kΩ`);
+      figures(el,svg(251,`共源放大电路，源极${bypass ? '有旁路电容' : '没有旁路电容'}`,body),
+        `<b>电压增益 ${signed(gain,2)}，输出反相。</b> 两种接法的静态漏极电流都是 2.00 mA。旁路电容只改变这里的交流通路。`);
+    }
+    bindRanges(el,({load:value}) => { load = value; render(); });
+    bindChoices(el,index => { bypass = index === 1; render(); },1);
+  }
+
+  function wavePair(mode,gain,caption,extent = 3.4) {
+    const chart = {x:197,y:35,width:220,height:115,min:-extent,max:extent};
+    return topology(mode,90,86) + line(197,92.5,417,92.5,grid,true) +
+      waveform(chart,Math.sin,teal,true) + waveform(chart,angle => gain*Math.sin(angle),rust) +
+      label(197,21,'输入',{size:15,color:teal}) + label(417,21,'输出',{align:'end',size:15,color:rust}) +
+      label(417,170,caption,{align:'end',size:14});
+  }
+
+  function commonDrain(el) {
+    layout(el,'源极跟随器能跟得多近？','把负载电阻调小，比较栅极输入和源极输出的振幅。两条波形的峰总是同一时刻到。',
+      range('负载电阻','load',.2,10,.2,2),
+      '中频小信号示例，g<sub>m</sub> = 2 mS，R<sub>S</sub> = 2 kΩ。负载由电容接到源极，记 R′<sub>S</sub> = R<sub>S</sub> ∥ R<sub>L</sub>，忽略场效应管自身输出电阻，A<sub>v</sub> = g<sub>m</sub>R′<sub>S</sub>/(1 + g<sub>m</sub>R′<sub>S</sub>)。虚线表示栅极 20 mV 的输入振幅。');
+    bindRanges(el,({load}) => {
+      const effective = 2*load/(2+load);
+      const gain = 2*effective/(1+2*effective);
+      const body = wavePair('CD',gain,'同相 · 时间 →',1.15);
+      output(el,'load',`${format(load,1)} kΩ`);
+      figures(el,svg(182,'共漏端口和同相输入输出波形',body),
+        `<b>增益 ${signed(gain,3)}，输出振幅 ${format(20*gain,1)} mV。</b> 负载电阻越小，源极输出的电压掉得越多。跟随器可以用来缓冲高阻输入与低阻负载。`);
+    });
+  }
+
+  function commonGate(el) {
+    layout(el,'信号源接到共栅电路，源极实际收到多少？','信号源的振幅固定为 100 mV。调大它的内阻，看进入共栅电路的信号如何变小。',
+      range('信号源内阻','source',0,3,.1,.5),
+      '栅极是交流公共点。取 g<sub>m</sub> = 2 mS、R<sub>D</sub> ∥ R<sub>L</sub> = 3 kΩ。忽略场效应管输出电阻和其他输入支路，输入电阻 R<sub>i</sub> ≈ 1/g<sub>m</sub> = 0.5 kΩ，从源极端口算起的电压增益是 +6。源电压先在信号源内阻和 R<sub>i</sub> 之间分压。');
+    bindRanges(el,({source}) => {
+      const input = 100*.5/(source+.5);
+      const body = topology('CG',89,83) + label(183,40,'信号源 100 mV',{bold:true}) +
+        `<rect x="183" y="51" width="227" height="18" rx="3" fill="${teal}"/>`+
+        label(183,105,`源极 ${format(input,1)} mV`,{bold:true}) +
+        `<rect x="183" y="116" width="${227*input/100}" height="18" rx="3" fill="${rust}"/>`;
+      output(el,'source',`${format(source,1)} kΩ`);
+      figures(el,svg(178,'共栅交流端口及源极实际收到的信号幅度',body),
+        `<b>源极收到 ${format(input,1)} mV，漏极输出 ${format(6*input,1)} mV。</b> 共栅的输入电阻较低，信号源的内阻越大，进入放大电路的信号越小。输出与源极输入同相。`);
+    });
+  }
+
+  function compare(el) {
+    const modes = [
+      {id:'CS',name:'共源',gain:-3,phase:'反相',input:'高',output:'较高',use:'常用来放大电压。'},
+      {id:'CD',name:'共漏',gain:.8,phase:'同相',input:'高',output:'较低',use:'常用作电压跟随或驱动负载。'},
+      {id:'CG',name:'共栅',gain:3,phase:'同相',input:'低',output:'较高',use:'输入端适合接低内阻信号源。'}
+    ];
+    layout(el,'同一只管子，换一个交流公共端','切换组态，看看信号从哪一脚进、哪一脚出，然后比较输出相位和输入电阻。',
+      choice('选择场效应管放大组态',modes.map(mode => mode.name)),
+      '图示为三种组态的小信号端口，接地符号表示交流公共端。波形用于比较相位与典型增益，具体增益和输入、输出电阻由偏置和外接元件共同决定。');
+    bindChoices(el,index => {
+      const {id,name,gain,phase,input,output:resistance,use} = modes[index];
+      figures(el,svg(182,`${name}交流端口和典型${phase}波形`,wavePair(id,gain,`${phase} · 时间 →`)),
+        `<b>${name}电路输出${phase}，输入电阻${input}，输出电阻${resistance}。</b> ${use}`);
+    });
+  }
+
+  const renderers = {'4.1':jfet,'4.2':mos,'4.3':tangent,'4.4':commonSource,'4.5':commonDrain,'4.6':commonGate,'4.7':compare};
+  window.mountModianChapterFourLab = el => {
+    const id = el.dataset.modianLab;
+    if (!Object.hasOwn(renderers,id)) return false;
+    if (el.dataset.modianMounted !== id) {
+      renderers[id](el);
+      el.dataset.modianMounted = id;
+    }
+    return true;
+  };
+})();
+</script>
+<script>function noteAttrs(s, uid, kind, label) {
   return 'data-note-block="'+txt(uid)+'" data-note-kind="'+txt(kind)+'" data-note-section="'+txt(s.n)+'" data-note-label="'+txt(label)+'"';
 }
 
@@ -1974,8 +3429,8 @@ function reviewHTML() {
     ${sections}`;
 }
 'use strict';
-const chapterThree = JSON.parse(document.getElementById('chapterThreeData').textContent);
-const lessons = [...JSON.parse(document.getElementById('lessonData').textContent), ...chapterThree.lessons];
+const extraChapters = ['chapterThreeData','chapterFourData'].map(name=>JSON.parse(document.getElementById(name).textContent));
+const lessons = [...JSON.parse(document.getElementById('lessonData').textContent), ...extraChapters.flatMap(chapter=>chapter.lessons)];
 const pageData = JSON.parse(document.getElementById('pageData').textContent);
 const id = name => document.getElementById(name);
 const key = 'modian-handbook-ch02-v1';
@@ -1986,7 +3441,10 @@ const chapters = {
       source:'第一章手写笔记 · 纸面 01–08'},
   3: {name:'第三章',title:'双极型晶体管及其放大电路',
       lead:'先看小小的基极电流怎样带动集电极电流，再学着搭一只放大器，把微弱信号送到负载。',
-      source:'第一、二、三章手写笔记 · 按小节对照'}
+      source:'第一、二、三章手写笔记 · 按小节对照'},
+  4: {name:'第四章',title:'场效应管及其基本放大电路',
+      lead:'先看栅极电压怎么改变沟道里的电流，再跟着信号走一遍共源、共漏和共栅电路。',
+      source:'第一、二章手写笔记 · 按小节对照'}
 };
 let stored = {};
 let storageAvailable = true;
@@ -2026,8 +3484,8 @@ function nextLessonNumber(n) {
 }
 function renderNavigation() {
   const chapter=state.curr[0], about=chapters[chapter], visible=lessonsInChapter();
-  id('chapter3Button').hidden=!numbers.includes('3.1');
   for (const button of id('chapterNav').querySelectorAll('[data-chapter]')) {
+    button.hidden=!numbers.includes(button.dataset.chapter+'.1');
     button.setAttribute('aria-pressed',String(button.dataset.chapter===chapter));
   }
   id('chapterName').textContent=about.name;
@@ -2036,8 +3494,9 @@ function renderNavigation() {
   id('chapterSections').textContent=visible.length;
   id('chapterLabs').textContent=visible.length;
   id('chapterQuizzes').textContent=visible.reduce((sum,s)=>sum+s.quiz.length,0);
-  id('chapter2Figure').hidden=chapter!=='2';
-  id('chapter3Figure').hidden=chapter!=='3';
+  for (const figure of document.querySelectorAll('[data-chapter-figure]')) {
+    figure.hidden=figure.dataset.chapterFigure!==chapter;
+  }
   id('railChapter').textContent='0'+chapter;
   id('railSource').textContent=about.source;
   id('footerChapter').textContent=about.name+' · '+about.title;
@@ -2180,11 +3639,11 @@ function openOriginal(n) {
   id('chapterSource').hidden=!s.source;
   id('originalAttribution').textContent=s.source?'课件与本地讲义对照':'配套手写笔记 · 尹南月、姬清影';
   if(s.source){
-    const {pdf,pages,ppt,slides,note}=s.source;
-    id('sourcePdf').textContent=pdf+' · PDF 第 '+pages+' 页';
+    const {pdf,pages,ppt,slides,note,references=[{pdf,pages}]}=s.source;
+    id('sourcePdf').textContent=references.map(ref=>ref.pdf+' · PDF 第 '+ref.pages+' 页').join('\n');
     id('sourceSlides').textContent=ppt+' · 第 '+slides+' 张';
     id('sourceSupplement').textContent=note||'页码以 PDF 阅读器显示为准，可在本地打开原讲义翻阅。';
-    Object.assign(id('noteOriginalAnchor').dataset,{noteBlock:'ch03-source-'+s.n.replace('.','-'),noteSection:s.n,noteLabel:'课件与原讲义页码',noteKind:'page'});
+    Object.assign(id('noteOriginalAnchor').dataset,{noteBlock:'ch0'+s.n[0]+'-source-'+s.n.replace('.','-'),noteSection:s.n,noteLabel:'课件与原讲义页码',noteKind:'page'});
   } else renderSheet();
   id('original').showModal();
 }
@@ -2205,7 +3664,7 @@ window.addEventListener('afterprint',()=>{
   const snap=printSnapshot;printSnapshot=null;id('reader').replaceChildren(...snap.nodes);window.scrollTo({top:snap.y,behavior:'instant'});
 });
 id('print').addEventListener('click',()=>window.print());
-const coachBank = {...JSON.parse(id('coachData').textContent), ...chapterThree.coach};
+const coachBank = Object.assign(JSON.parse(id('coachData').textContent), ...extraChapters.map(chapter=>chapter.coach));
 const coachStorage = 'modian-coach-ch02-v1';
 let sessions = {};
 let coachSaveFailed = false;
