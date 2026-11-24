@@ -1,0 +1,1137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="handbook-release" content="83da23b3a7a653950b79">
+<title>期末单元测 · 模电手记</title>
+<style>
+:root{color-scheme:light;--ink:#172f44;--blue:#19537e;--line:#cbdde9;--muted:#50697b;--soft:#eaf4fa;--paper:#fff;--good:#185b46;--bad:#95452c}
+*{box-sizing:border-box}body{margin:0;background:#f4f9fc;color:var(--ink);font:16px/1.65 system-ui,"Microsoft YaHei",sans-serif}
+button,select,input,textarea{font:inherit;color:inherit}button,select{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #4689bf;outline-offset:3px}a{color:var(--blue);text-underline-offset:3px}
+header{border-bottom:1px solid var(--line);background:#fff}.top,.shell{max-width:1160px;margin:auto;padding:0 28px}.top{display:flex;align-items:center;justify-content:space-between;gap:1em;min-height:62px}.brand{font:700 22px Georgia,"SimSun",serif;color:var(--ink);text-decoration:none}
+.shell{display:grid;grid-template-columns:235px minmax(0,1fr);gap:42px;padding-top:35px;padding-bottom:70px}
+.side{align-self:start}.side h2{font-size:16px;margin:0 0 12px}.side nav{display:grid;gap:4px}.side nav a{display:flex;gap:10px;text-decoration:none;padding:9px 10px;border-radius:5px;line-height:1.45;font-size:14px}.side nav a[aria-current=page]{background:#dcebf5;color:#113f61;font-weight:700;border-left:3px solid #376e95}.side nav a:hover{background:var(--soft)}.side .num{min-width:23px;font:600 14px/1.5 ui-monospace,monospace}
+.mobilePicker{display:none}.paper{min-width:0}.edition{color:var(--blue);font-size:14px;font-weight:650;margin:0}.paper h1{font:700 clamp(27px,4vw,44px)/1.25 Georgia,"SimSun",serif;letter-spacing:-.025em;margin:8px 0 12px}.topics{margin:0 0 8px}.guide,.source,.save{font-size:14px;color:var(--muted)}.guide{margin:7px 0}.source{margin:.55em 0}.source summary{cursor:pointer;width:fit-content}.source p{margin:.4em 0}.save{margin:.4em 0 0}
+.unitHead{border-bottom:2px solid var(--blue);padding:0 0 17px}.group{margin:30px 0}.group h2{display:flex;align-items:baseline;gap:12px;font:700 23px/1.4 Georgia,"SimSun",serif;margin:0 0 12px}.group h2 small{font:normal 14px system-ui,sans-serif;color:var(--muted)}
+.question{border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:18px 20px;margin:12px 0;break-inside:avoid}.question h3{font-size:17px;font-weight:650;line-height:1.65;margin:0 0 13px;white-space:pre-line}.qnum{color:var(--blue);font-weight:750;margin-right:.6em}.figure{margin:8px 0 16px;color:#19384d;background:#f1f7fb;border:1px solid #dbe6ed;border-radius:4px;padding:10px 12px;overflow-x:auto}.figure pre{font:14px/1.28 Consolas,"Courier New",monospace;margin:0;width:max-content;white-space:pre}
+.choices{display:grid;gap:6px}.option{display:flex;align-items:baseline;gap:.5em;padding:7px 11px;background:#f8fbfd;border:1px solid #dbe5ed;border-radius:4px}.option:has(input:checked){background:var(--soft);border-color:#77a0bc}input[type=radio],input[type=checkbox]{accent-color:var(--blue)}
+.fillRow{display:flex;align-items:center;gap:.5em}.fillRow input{width:14em;max-width:75%;padding:.45em .65em}.fillRow input,textarea,select{border:1px solid #a9c1d3;border-radius:4px;background:#fff}.work{width:100%;min-height:100px;padding:.6em .75em;resize:vertical}.onPaper{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:14px}.solution{margin-top:15px;border-top:1px solid var(--line);padding-top:12px}.solution p{margin:3px 0 8px;white-space:pre-line}.right{font-weight:700;color:var(--good)}.wrong{font-weight:700;color:var(--bad)}.step{padding:6px 0}.step strong{color:var(--blue)}.mark{font-size:14px}.mark select{padding:3px 6px;margin-left:8px}
+.actions,.score{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.actions{margin-top:15px}.btn{padding:8px 15px;border:1px solid #a8becd;border-radius:5px;background:white}.primary{background:var(--blue);border-color:var(--blue);color:#fff}.score{background:var(--soft);border-left:4px solid var(--blue);padding:12px 16px;margin:18px 0}.score strong{font-size:19px}.score span{font-size:14px}.paperAnswer,.printOnly{display:none}.footer{color:var(--muted);font-size:14px;margin-top:2em}
+@media(max-width:760px){.top,.shell{padding-left:15px;padding-right:15px}.shell{display:block;padding-top:16px}.side{display:none}.mobilePicker{display:flex;align-items:center;gap:10px;margin-bottom:16px}.mobilePicker select{padding:7px;min-width:0;flex:1}.question{padding:14px}.figure pre{font-size:12px}.top{min-height:54px}.brand{font-size:20px}}
+@page{size:A4;margin:15mm 15mm 16mm}
+@media print{body{background:#fff;color:#111;font-size:10.5pt;line-height:1.42}header,.side,.mobilePicker,.actions,.guide,.source,.save,.footer,.onPaper,.mark,.score,.screenAnswer{display:none!important}.shell{display:block;max-width:none;padding:0}.printOnly,.paperAnswer{display:block}.unitHead{padding:0 0 7px}.paper h1{font-size:21pt;margin:3px 0}.edition,.topics{font-size:10pt}.group{margin:12px 0}.group h2{font-size:14pt;break-after:avoid}.question{border:0;border-radius:0;margin:6px 0;padding:4px 0}.question h3{font-size:11pt;margin-bottom:4px}.choices{gap:0}.option{padding:1px 0;border:0;background:none!important}.option input{display:none}.figure{padding:4px 8px;margin:3px 0;overflow:visible}.figure pre{font-size:9pt}.solution{margin:5px 0;padding:3px 0}.paperAnswer{padding:4px 0}.workLines{height:32mm;border-bottom:1px dotted #aaa}.printOnly{font-size:10pt}.solution,.question{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><div class="top"><a class="brand" href="index.html">模电手记</a><a href="index.html">返回讲义</a></div></header>
+<main class="shell">
+  <aside class="side"><h2>期末单元测</h2><nav id="units" aria-label="选择单元"></nav></aside>
+  <section class="paper" aria-labelledby="paperTitle">
+    <label class="mobilePicker">选择试卷<select id="unitSelect"></select></label>
+    <div class="unitHead">
+      <p class="edition" id="unitNumber"></p><h1 id="paperTitle"></h1><p class="topics" id="topics"></p>
+      <p class="guide">每套 100 分。选择和填空自动判分，计算设计题交卷后按步骤自评。数值按题旁单位填写，允许 1% 的误差。</p>
+      <details class="source"><summary>查看命题依据</summary><p>单元和题型按《新版模电期末复习》编排，保留原章号。题目结合《模电复习参考（20210106）》中的识图、计算、设计和调试要求原创。</p><p id="classMatch"></p></details>
+      <div class="actions"><button type="button" class="btn" id="printPaper">打印本单元空白卷</button><a href="unit-exams-print.pdf" download="模电期末单元测（10套空白卷）.pdf">下载十套空白卷（PDF）</a></div>
+      <p class="save" id="saveStatus" aria-live="polite">作答自动保存在此浏览器。</p>
+      <p class="printOnly">姓名 __________________　日期 ________________　得分 ______ / 100</p>
+    </div>
+    <div id="summary" aria-live="polite"></div>
+    <form id="paperForm" autocomplete="off"><div id="questions"></div><div class="actions" id="paperActions"></div></form>
+    <p class="footer"><a href="#top" id="backTop">回到卷首 ↑</a></p>
+  </section>
+</main>
+<script type="application/json" id="examBank">[
+  {
+    "chapter": 1,
+    "title": "二极管及其基本电路",
+    "topics": "PN 结、伏安与开关特性、工作状态、限幅和稳压设计",
+    "questions": [
+      {
+        "type": "choice",
+        "prompt": "刚把 P 区和 N 区组成 PN 结时，交界处为什么会出现内建电场？",
+        "options": [
+          "自由电子从 P 区大量扩散到 N 区，使 P 侧留下正电荷",
+          "多数载流子扩散并复合，两侧露出带电的固定离子",
+          "空穴和电子都被固定在晶格上，一起构成电场",
+          "两边的离子穿过结面交换位置，直到载流子消失"
+        ],
+        "answer": 1,
+        "explain": "N 侧的电子和 P 侧的空穴越过交界面后发生复合。原地留下 N 侧的正施主离子和 P 侧的负受主离子，电场从 N 侧指向 P 侧。"
+      },
+      {
+        "type": "choice",
+        "prompt": "图中两管均用 0.7 V 恒压降模型，A、K 分别代表阳极和阴极。两个参考电源都能维持图示电位。哪个判断自洽？",
+        "options": [
+          "D1 截止、D2 导通，X 为 −0.7 V",
+          "两管都截止，X 为 5.0 V",
+          "D1 导通、D2 截止，X 为 2.0 V",
+          "两管都导通，X 为 0 V"
+        ],
+        "answer": 2,
+        "explain": "电阻把 X 往 5 V 拉。X 一旦到达 1.3 + 0.7 = 2.0 V，D1 导通。此时 D2 的阳极在 0 V，阴极在 2 V，处于反偏。",
+        "diagram": "+5 V --- R --- X --- A[D1]K --- +1.3 V\n               |\n               K\n              [D2]\n               A\n               |\n              0 V"
+      },
+      {
+        "type": "choice",
+        "prompt": "一只普通 PN 二极管原来正向导通，随后外部电源突然使它反偏。示波器上出现一小段反向电流，再降到很小。这主要体现什么？",
+        "options": [
+          "反向恢复，需要先清除先前存储的载流子",
+          "进入稳定的反向击穿区",
+          "结内已经没有电荷可以移动",
+          "接上反向电压后立即达到稳态"
+        ],
+        "answer": 0,
+        "explain": "导通时结两边存了一些少数载流子。电压反向后先有一段清除电荷的过程，这段时间内反向电流可能明显大于稳态漏电流。"
+      },
+      {
+        "type": "fill",
+        "prompt": "理想二极管与 1.0 kΩ 电阻串联。电源正极 4.7 V 经电阻接阳极，阴极接地。稳态电流为多少 mA？",
+        "answer": 4.7,
+        "unit": "mA",
+        "explain": "阳极受到正向驱动，理想管导通时压降取零，4.7 V 全落在电阻上。I = 4.7 V / 1.0 kΩ = 4.7 mA。"
+      },
+      {
+        "type": "fill",
+        "prompt": "在伏安曲线的一小段，管压降从 0.62 V 变到 0.64 V，管电流从 0.40 mA 变到 1.40 mA。用这两个点估算该处的微变电阻，单位为 Ω。",
+        "answer": 20,
+        "unit": "Ω",
+        "explain": "小范围电压增量是 0.02 V，电流增量是 1.00 mA。两者相除得到 20 Ω。"
+      },
+      {
+        "type": "fill",
+        "prompt": "8.1 V 直流电源通过 1 kΩ 接到输出。输出端并联 2.55 kΩ 负载和一个反接的 5.1 V 理想稳压管。假设已稳压，稳压管承受多少 mA 的反向电流？",
+        "answer": 1,
+        "unit": "mA",
+        "explain": "串联电阻送来 (8.1 − 5.1) / 1 = 3 mA，负载取走 5.1 / 2.55 = 2 mA，稳压管分得 1 mA，电流方向符合假设。"
+      },
+      {
+        "type": "work",
+        "prompt": "输入电压经 1 kΩ 接到空载输出 X。上限幅管的阳极接 X、阴极接 +2.3 V。下限幅管的阳极接 −1.3 V、阴极接 X。两管导通压降均取 0.7 V。分别在输入为 +5 V 和 −5 V 时，写出哪只管导通、X 的电压以及导通管电流的大小。",
+        "steps": [
+          {
+            "criterion": "判对正向输入时的通断、电压和电流",
+            "solution": "上管在 X = 2.3 + 0.7 = 3.0 V 时导通，下管截止。电流由输入流向上管，大小 (5 − 3) / 1 = 2.0 mA。"
+          },
+          {
+            "criterion": "判对负向输入时的通断、电压和电流",
+            "solution": "下管在 X = −1.3 − 0.7 = −2.0 V 时导通，上管截止。电流由 −1.3 V 参考端流向输入端，大小 [−2 − (−5)] / 1 = 3.0 mA。"
+          }
+        ]
+      },
+      {
+        "type": "work",
+        "prompt": "设计并联稳压器。输入为 10～14 V，目标输出 6 V，负载电流为 0～6 mA。理想化的 6 V 稳压管要求反向电流在 2～20 mA。串联电阻候选为 390 Ω、470 Ω、560 Ω、680 Ω。选出合适的电阻，再从 0.10 W 和 0.25 W 两档中选够用的稳压管功率。",
+        "steps": [
+          {
+            "criterion": "用最低输入、最重负载和最高输入、空载求电阻范围",
+            "solution": "最难维持稳压时串阻至少要送出 6 + 2 = 8 mA，故 R ≤ (10 − 6) V / 8 mA = 500 Ω。最高输入且空载时电流全过稳压管，故 R ≥ (14 − 6) V / 20 mA = 400 Ω。候选中只有 470 Ω 合适。"
+          },
+          {
+            "criterion": "验算稳压管最大耗散并选择额定功率",
+            "solution": "稳压管最大电流为 8 V / 470 Ω ≈ 17.0 mA，最大耗散约 6 V × 17.0 mA = 0.102 W。0.10 W 略小，应选 0.25 W。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": 2,
+    "title": "双极型三极管及放大电路",
+    "topics": "管型与偏置、静态工作点、负载线、失真、共射和共集的小信号计算",
+    "questions": [
+      {
+        "type": "choice",
+        "prompt": "某硅管的符号上，发射极箭头指向基极。测得发射极 8.0 V、基极 7.3 V、集电极 2.0 V。它属于什么管，处于什么工作区？",
+        "options": [
+          "NPN，截止区",
+          "PNP，饱和区",
+          "NPN，正向放大区",
+          "PNP，正向放大区"
+        ],
+        "answer": 3,
+        "explain": "箭头向内对应 PNP。发射极比基极高 0.7 V，发射结正偏。集电极比基极低，集电结反偏，两项都符合正向放大。"
+      },
+      {
+        "type": "choice",
+        "prompt": "分压偏置 NPN 共射电路里，分压点电压近似不动，发射极串电阻。升温使集电极电流有增大的趋势时，电路怎样抑制这种变化？",
+        "options": [
+          "发射极电位升高，基射电压减小",
+          "发射极电位降低，基射电压增大",
+          "分压点电压自动增大一倍",
+          "发射极电阻的直流压降变为零"
+        ],
+        "answer": 0,
+        "explain": "发射极电流增大，电阻压降变大，发射极电位上升。基极电位近似固定，U_BE 随之下降，抵消一部分电流增长。"
+      },
+      {
+        "type": "choice",
+        "prompt": "共集电路里，β = 99，r_be = 1 kΩ，发射极的交流等效负载为 1 kΩ。忽略晶体管输出电阻和基极偏置支路。基极到发射极的电压增益与从基极看入的电阻约为哪一组？",
+        "options": [
+          "−0.99、101 kΩ",
+          "+0.99、101 kΩ",
+          "+100、1 kΩ",
+          "−100、10 Ω"
+        ],
+        "answer": 1,
+        "explain": "发射极的电阻折算到基极要乘 1 + β。R_i = 1 + 100 × 1 = 101 kΩ，电压增益为 100/101 ≈ +0.99，发射极与输入同相。"
+      },
+      {
+        "type": "fill",
+        "prompt": "发射极接地的 NPN 管由 10 V 供电。基极经 310 kΩ 接电源，集电极经 2 kΩ 接电源，取 U_BEQ = 0.7 V。下表是输出特性曲线在放大区的读数，电流随 U_CE 的微小变化忽略不计。静态管压降 U_CEQ 等于多少 V？",
+        "diagram": "I_B (uA) | 10  | 20  | 30  | 40  |\nI_C (mA) | 0.8 | 1.6 | 2.4 | 3.2 |",
+        "answer": 5.2,
+        "unit": "V",
+        "explain": "I_BQ = (10 − 0.7) V / 310 kΩ = 30 μA，I_CQ ≈ 2.4 mA。U_CEQ = 10 − 2.4 × 2 = 5.2 V。集电极高于基极，正向放大区假设成立。"
+      },
+      {
+        "type": "fill",
+        "prompt": "发射极交流接地，R_C = 2 kΩ，R_L = 6 kΩ 经足够大的耦合电容接入。以 U_CE 为横轴、I_C 为纵轴，交流负载线的带符号斜率是多少 mA/V？",
+        "answer": -0.6666666666666666,
+        "unit": "mA/V",
+        "explain": "中频时 R_C ∥ R_L = 1.5 kΩ。输出电压越高，电阻支路能提供的电流越少，故斜率为 −1/1.5 ≈ −0.667 mA/V。直流负载线的斜率为 −1/2 mA/V。"
+      },
+      {
+        "type": "fill",
+        "prompt": "求射极跟随器的输出电阻。将独立输入源置零后，基极通过 1 kΩ 接交流地。β = 99，r_be = 1 kΩ，发射极另有 1 kΩ 电阻接地。撤去负载，忽略管子自身输出电阻。输出电阻约为多少 Ω？ 结果保留一位小数。",
+        "answer": 19.6,
+        "unit": "Ω",
+        "explain": "从发射极看入管子为 (1 kΩ + 1 kΩ)/(1 + 99) = 20 Ω，与发射极外接 1 kΩ 并联，得到约 19.6 Ω。"
+      },
+      {
+        "type": "work",
+        "prompt": "图中 NPN 已正确偏置，发射极接地。求中频小信号参数。取 β = 90、r_be = 3 kΩ，偏置网络对交流地等效为 R_B = 15 kΩ。R_C = R_L = 4 kΩ，忽略管子输出电阻，耦合电容可视为短路。求电压增益 A_v、输入电阻 R_i、输出电阻 R_o。若信号源内阻为 500 Ω，再求从源电压算起的增益。",
+        "steps": [
+          {
+            "criterion": "从交流通路求端口增益及相位",
+            "solution": "交流电源端接地，集电极看到 4 kΩ ∥ 4 kΩ = 2 kΩ。A_v = −β(R_C ∥ R_L)/r_be = −90 × 2/3 = −60，输出反相。"
+          },
+          {
+            "criterion": "求输入、输出电阻，并计入源内阻的分压",
+            "solution": "R_i = 15 kΩ ∥ 3 kΩ = 2.5 kΩ。撤去负载后 R_o ≈ R_C = 4 kΩ。源电压只有 2.5/(2.5 + 0.5) 到达输入，源电压增益为 −50。"
+          }
+        ],
+        "diagram": "                +VCC\n                  |\n                 R_C\n                  |\n                  +----||---- R_L ---- 0\n                  C\nu_i -------- B [NPN]\n                  E\n                  |\n                  0\n(bias network omitted)"
+      },
+      {
+        "type": "work",
+        "prompt": "一个发射极接地的 NPN 共射级空载，电源 10 V，U_CE(sat) 取 0.2 V。静态集电极电位为 8.8 V。线性计算原本预计集电极能绕 Q 点上下各摆 2 V。判断实际哪一边先削平，并用基极电阻 R_B 调整工作点，使两边可用摆幅相等。R_B 从正电源接到基极。",
+        "steps": [
+          {
+            "criterion": "指出先削平的一侧、所属失真及摆幅依据",
+            "solution": "上摆只剩 10 − 8.8 = 1.2 V，2 V 的要求会让电流先降到零，输出上部削平，是截止失真。下摆到饱和边界尚有 8.8 − 0.2 = 8.6 V。"
+          },
+          {
+            "criterion": "给出目标 Q 点和调整 R_B 的方向",
+            "solution": "可用范围是 0.2～10 V，中点为 5.1 V。要使集电极电位从 8.8 V 降到 5.1 V，应减小 R_B，使基极和集电极电流增大，增加 R_C 上的压降。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": 4,
+    "title": "场效应管放大电路",
+    "topics": "器件与特性曲线、自偏置和分压偏置、跨导、共源和共漏",
+    "questions": [
+      {
+        "type": "choice",
+        "prompt": "某绝缘栅器件的源极接地，漏极保持正电位，取足够大的漏源电压测得如下转移特性。按理想平方律模型，哪种管型及开启电压符合这组数据？",
+        "options": [
+          "N 沟道耗尽型，关断电压 −2 V",
+          "P 沟道增强型，开启电压 −2 V",
+          "N 沟道增强型，开启电压 +2 V",
+          "N 沟道 JFET，夹断电压 −2 V"
+        ],
+        "answer": 2,
+        "explain": "零栅压下截止，需要正栅压才导通。超过 2 V 后，过驱动电压从 1 V 变到 2 V，电流从 1 mA 变到 4 mA，与增强型 NMOS 的平方律一致。",
+        "diagram": "U_GS (V) |  0 |  1 |  2 |  3 |  4 |\nI_D (mA) |  0 |  0 |  0 |  1 |  4 |"
+      },
+      {
+        "type": "choice",
+        "prompt": "N 沟道 JFET 自偏置电路中，栅极通过大电阻接地，源极通过 R_S 接地。为什么静态栅源电压通常是负的？",
+        "options": [
+          "栅极流过很大的正向电流",
+          "漏极电流在源极电阻上产生正的源极电位",
+          "栅极一定要由独立负电源供电",
+          "源极电阻在直流时等效短路"
+        ],
+        "answer": 1,
+        "explain": "栅极电流很小，栅极电位近似 0 V。源极电位约为 I_D R_S，所以 U_GS = V_G − V_S ≈ −I_D R_S。"
+      },
+      {
+        "type": "choice",
+        "prompt": "某 FET 电路的漏极接恒压电源，输入经电容送到栅极，输出从源极经电容送往负载。哪项最符合中频小信号的表现？",
+        "options": [
+          "共源，反相，常用来放大电压",
+          "共栅，同相，从输入看入的电阻较低",
+          "共漏，反相，输出幅度通常远大于输入",
+          "共漏，同相，适合用作缓冲级"
+        ],
+        "answer": 3,
+        "explain": "恒压电源是交流地，因此漏极是公共端。源极会跟着栅极同向摆动，输入电阻通常较高、输出电阻通常较低。"
+      },
+      {
+        "type": "fill",
+        "prompt": "N 沟道 JFET 按理想恒流区模型 I_D = I_DSS(1 − U_GS/U_P)² 工作，I_DSS = 8 mA，U_P = −4 V。栅极接地，源极经 1 kΩ 接地，漏源电压足够。取符合 −4 V ≤ U_GS ≤ 0 的物理解。静态漏极电流是多少 mA？",
+        "answer": 2,
+        "unit": "mA",
+        "explain": "用 mA 和 kΩ，栅源电压的伏特数为 −I_D。联立后 I_D = 8(1 − I_D/4)²，得到 2 mA 和 8 mA。后者对应 −8 V，超出转移式适用范围，因此取 2 mA。"
+      },
+      {
+        "type": "fill",
+        "prompt": "保持漏源电压恒定，在 Q 点附近把栅源电压从 2.99 V 调到 3.01 V，漏极电流从 1.97 mA 变为 2.03 mA。估算跨导，单位为 mS。",
+        "answer": 3,
+        "unit": "mS",
+        "explain": "跨导近似等于漏极电流增量除以栅源电压增量。0.06 mA / 0.02 V = 3 mS。"
+      },
+      {
+        "type": "fill",
+        "prompt": "共源级的源极为交流地，R_D = 5 kΩ，管子的小信号输出电阻 r_ds = 20 kΩ。从漏极求输出电阻，已撤去负载并将输入置零，此时得到多少 kΩ？",
+        "answer": 4,
+        "unit": "kΩ",
+        "explain": "栅源小信号电压为零，受控电流源的增量为零。漏极通过 R_D 和 r_ds 两条支路接交流地，所以 R_o = 5 ∥ 20 = 4 kΩ。"
+      },
+      {
+        "type": "work",
+        "prompt": "分压偏置的增强型 NMOS 共源级由 10 V 供电。上、下分压电阻分别为 3 MΩ 和 2 MΩ，源极接地，漏极经 2 kΩ 接电源。已知 U_T = 2 V，恒流区 I_D = K(U_GS − U_T)²，K = 0.5 mA/V²。负载 2 kΩ 经电容耦合。求 Q 点并判断工作区，再求中频 A_v、R_i、R_o，忽略栅极电流和沟道长度调制。",
+        "steps": [
+          {
+            "criterion": "算出栅压、静态电流和漏源电压，并验证工作区",
+            "solution": "栅压由分压得到 10 × 2/(3 + 2) = 4 V。I_DQ = 0.5 × (4 − 2)² = 2 mA。直流负载被电容隔开，U_DSQ = 10 − 2 × 2 = 6 V，高于 2 V 的过驱动电压，处于恒流区。"
+          },
+          {
+            "criterion": "根据 Q 点的跨导和交流通路求三个参数",
+            "solution": "g_m = 2K(U_GSQ − U_T) = 2 mS。A_v ≈ −2 mS × (2 kΩ ∥ 2 kΩ) = −2。R_i = 3 MΩ ∥ 2 MΩ = 1.2 MΩ，撤下负载后 R_o ≈ 2 kΩ。"
+          }
+        ]
+      },
+      {
+        "type": "work",
+        "prompt": "一个源极跟随器的栅极经 1 MΩ 电阻接理想偏置电源，漏极接恒压电源，源极经 R_S = 2 kΩ 接地。取 g_m = 4 mS，忽略 r_ds。负载通过大电容接入。可选负载为 1 kΩ 和 2.2 kΩ，要求栅极到负载的中频增益至少为 +0.80。求允许的最小负载电阻，选一只合格负载，并估算电路的输入和输出电阻。",
+        "steps": [
+          {
+            "criterion": "根据跟随器增益推出最小负载并选值",
+            "solution": "令 R′ = R_S ∥ R_L，A_v = g_m R′/(1 + g_m R′) ≥ 0.8 要求 g_m R′ ≥ 4，即 R′ ≥ 1 kΩ。由 2 kΩ ∥ R_L ≥ 1 kΩ 得 R_L ≥ 2 kΩ，选择 2.2 kΩ。此时增益约 +0.807。"
+          },
+          {
+            "criterion": "正确求出输入电阻和撤除负载后的输出电阻",
+            "solution": "本题栅极电流忽略，R_i ≈ 1 MΩ。输入置零且撤下负载，R_o ≈ R_S ∥ (1/g_m) = 2 kΩ ∥ 250 Ω ≈ 222 Ω。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": 5,
+    "title": "多级放大电路和频率响应",
+    "topics": "级间负载、复合管、频带、低频耦合电容、高频小信号模型和失真",
+    "questions": [
+      {
+        "type": "choice",
+        "prompt": "两个没有跨级反馈的电压放大级接在一起。哪种计算最能反映实际表现？",
+        "options": [
+          "把两级的输入电阻相加作为总输入电阻",
+          "把两级的输出电阻并联作为总输出电阻",
+          "把两级空载电压增益直接相乘",
+          "先让后级的输入电阻作为前级的负载，再乘各级实际增益"
+        ],
+        "answer": 3,
+        "explain": "前级要给后级提供信号，可能被后级拉低。总输入电阻从第一级输入端看，总输出电阻从最后一级输出端看，均应按实际连接条件计算。"
+      },
+      {
+        "type": "choice",
+        "prompt": "对阻容耦合的 BJT 放大器，下面哪一组对应关系通常正确？",
+        "options": [
+          "低频主要看管内结电容，高频主要看输入耦合电容",
+          "低频主要看耦合、旁路电容，高频主要看结电容和杂散电容",
+          "低频和高频都可以把所有电容看成短路",
+          "低频只考虑集电极电阻，高频只考虑发射极电阻"
+        ],
+        "answer": 1,
+        "explain": "耦合、旁路电容的容抗在低频变大，通路受到影响。频率升高时，原本很小的结电容和杂散电容也会明显分流。"
+      },
+      {
+        "type": "choice",
+        "prompt": "向放大器送入同时含有 1 kHz 和 20 kHz 的小信号。实验甲只发现原有两频率被不同程度地衰减。实验乙改送单一正弦并加大幅度，出现削顶和新的三次谐波。怎样归类？",
+        "options": [
+          "甲是线性失真，乙是非线性失真",
+          "甲和乙都是线性失真",
+          "甲和乙都是非线性失真",
+          "甲是非线性失真，乙是线性失真"
+        ],
+        "answer": 0,
+        "explain": "线性电路也会对各频率给出不同幅度或相位。削顶破坏了输入输出的正比关系，还会生成原有正弦里没有的谐波。"
+      },
+      {
+        "type": "fill",
+        "prompt": "两只 NPN 构成同型达林顿管，第一只的发射极直接接第二只的基极，两只集电极相连。给定 β₁ = 30、β₂ = 40，两管均在线性放大区。忽略漏电流并保留 β 的一次项，等效共射电流放大倍数是多少？",
+        "answer": 1270,
+        "unit": "",
+        "explain": "取第一只基极电流为 i，两只集电极电流分别为 30i 和 40 × 31i。外部集电极合计 1270i，因此等效 β = β₁β₂ + β₁ + β₂ = 1270。"
+      },
+      {
+        "type": "fill",
+        "prompt": "下表给出一只单峰通带放大器的测量数据。中频增益幅值为 100，表中 70.7 对应 −3 dB 边界。它的通频带宽度是多少 kHz？",
+        "answer": 20,
+        "unit": "kHz",
+        "explain": "下限为 0.1 kHz，上限为 20.1 kHz，BW = f_H − f_L = 20.0 kHz。",
+        "diagram": "f (kHz) | 0.1  | 1.0 | 5.0 | 20.1 |\n|Av|    | 70.7 | 100 | 100 | 70.7 |"
+      },
+      {
+        "type": "fill",
+        "prompt": "低频等效电路中，仅考虑 1.0 μF 输入耦合电容。其两侧分别为内阻 1 kΩ 的电压源和输入电阻 4 kΩ 的放大器，二者共地。这个耦合网络给出的下限频率约为多少 Hz？",
+        "answer": 31.83,
+        "unit": "Hz",
+        "explain": "把理想电压源置零，从电容两端看进去，两个电阻通过公共地串联，合计 5 kΩ。f_L = 1/(2π × 5 kΩ × 1 μF) ≈ 31.83 Hz。"
+      },
+      {
+        "type": "work",
+        "prompt": "两个放大级串接。第一级是反相共射级，输出电阻不能忽略。第二级是同相射极跟随器，接着最终负载。① 接入第二级时，从第一级输入端到级间节点的电压增益幅值会怎样变化？沿图说明原因。② 换用输入电阻更高的跟随器，保持它自身的带载电压增益不变。最终输出的幅度和相位相对原来怎样变化？如果还想减轻信号源的负担，应优先提高哪一级的输入电阻？设两级均工作在中频线性区，信号源和第一级输入电阻保持不变。",
+        "diagram": "u_s -- R_s -- [CE: inverting] -- [CC: follower] -- R_L",
+        "steps": [
+          {
+            "criterion": "判断后级对前级的负载作用，并说清分压位置",
+            "solution": "第一级空载时，输出端几乎不取电流。接上跟随器后，它的输入电阻成为前级的负载，与前级输出电阻分压。前级输入相同时，级间节点拿到的电压更小，所以前级的带载增益幅值下降。"
+          },
+          {
+            "criterion": "判断最终幅度、相位和信号源所见的输入电阻",
+            "solution": "提高跟随器的输入电阻，级间分压损失减小，最终输出幅度变大。整条链始终只有共射级反相，所以输出仍与信号源反相。信号源直接接第一级，要减轻它的负担，应优先提高第一级的输入电阻。"
+          }
+        ]
+      },
+      {
+        "type": "work",
+        "prompt": "一只高频共射级的基极到集电极小信号增益为 −19。高频模型给出 C_π = 30 pF（基极对交流地）和 C_μ = 2 pF（基极到集电极）。信号源置零后，对基极充放电的等效电阻为 800 Ω。用密勒近似估算输入端总电容和由它主导的上限频率。为提高上限频率，在减小信号源内阻和增大输入耦合电容之间选一种，说明原因。假设其他极点足够远，Q 点和级内增益保持不变。",
+        "steps": [
+          {
+            "criterion": "求密勒输入电容和输入端总电容",
+            "solution": "集电极与基极反相，跨接电容折到输入端为 C_μ(1 − A_v) = 2 pF × 20 = 40 pF。加上 C_π 后总计 70 pF。"
+          },
+          {
+            "criterion": "估算上限频率并给出正确改动",
+            "solution": "f_H ≈ 1/(2π × 800 Ω × 70 pF) ≈ 2.84 MHz。减小信号源内阻会减小基极处的等效电阻，使高频小电容充放电更快。增大耦合电容主要改善低频响应。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": 6,
+    "title": "功率放大电路",
+    "topics": "甲类、乙类与甲乙类，单电源 OTL 与双电源 OCL，输出功率、管耗、效率与选管",
+    "questions": [
+      {
+        "type": "choice",
+        "prompt": "图中两个输出管轮流给负载供电。M 点静态为 9 V。图上 C 的作用是什么？",
+        "diagram": "        +18 V\n          |\n        [Q1]\n          |\n          M-----||-----RL-----GND\n          |      C\n        [Q2]\n          |\n         GND",
+        "options": [
+          "把 M 点的直流电位提高到 18 V",
+          "隔开 M 点的直流分量，让音频交流分量到达负载",
+          "让两个输出管在整个周期同时导通",
+          "把单电源变成两组独立的直流电源"
+        ],
+        "answer": 1,
+        "explain": "这是单电源电容耦合的 OTL 输出级。稳态直流遇到 C 相当于开路。对通带内的音频，选得足够大的 C 阻抗较小，负载能接收到电压变化。"
+      },
+      {
+        "type": "choice",
+        "prompt": "互补推挽功放输出小幅正弦波时，示波器在每次过零处都显示一个小缺口。两个峰还很圆。哪项调整最有针对性？",
+        "options": [
+          "加大输入幅度，直到波峰削平",
+          "降低供电电压，缩小输出摆幅",
+          "给两管适量静态偏置，使其在过零附近平滑交接",
+          "将两管的静态电流都调为零"
+        ],
+        "answer": 2,
+        "explain": "乙类输出级的一个管刚停、另一个管还没开，就会留下过零缺口。调成甲乙类后，两管在交接附近都有一点电流。偏置过大会增加静态发热。"
+      },
+      {
+        "type": "choice",
+        "prompt": "以一个完整的正弦周期为 360°。按一只功放管在典型工作状态下的导通角分类，哪一组正确？",
+        "options": [
+          "甲类 360°，乙类 180°，甲乙类在 180° 与 360° 之间",
+          "甲类 180°，乙类 360°，甲乙类小于 90°",
+          "甲类 360°，乙类小于 90°，甲乙类恰为 180°",
+          "甲类和甲乙类都只在输入过零时导通"
+        ],
+        "answer": 0,
+        "explain": "甲类一只管能跟完整周期，静态耗电较多。理想乙类每只管负责半个周期。甲乙类比半个周期多导通一小段，两管的交接较平顺。"
+      },
+      {
+        "type": "fill",
+        "prompt": "单电源 18 V 的 OTL 电路，输出中点静态为 9 V，正、负峰都要离对应电源轨至少 1 V。输出耦合电容在信号频率下近似短路。接 6 Ω 纯电阻时，最大不失真正弦输出功率约为多少？",
+        "answer": 5.33,
+        "unit": "W",
+        "explain": "中点到任一电源轨都有 9 V，留下 1 V 后，峰值为 8 V。正弦有效值为 8/√2 V，故 P_o = 8²/(2 × 6) ≈ 5.33 W。"
+      },
+      {
+        "type": "fill",
+        "prompt": "理想乙类 OCL 功放用 ±12 V 双电源，向 8 Ω 电阻输出峰值 8 V 的正弦电压。忽略静态功耗，两路电源合计提供的平均功率 P_V 约为多少？",
+        "answer": 7.64,
+        "unit": "W",
+        "explain": "负载峰值电流为 1 A。每路电源只供应半个正弦，按完整周期平均的电流为 1/π A。两路合计 P_V = 2 × 12 × 1/π ≈ 7.64 W。"
+      },
+      {
+        "type": "fill",
+        "prompt": "实测一台功放向 8 Ω 电阻输出有效值 8 V 的正弦电压，同时从直流电源总共取用 12.5 W。整机效率约为百分之几？",
+        "answer": 64,
+        "unit": "%",
+        "explain": "有效值可以直接用来算平均功率。P_o = 8²/8 = 8 W，η = 8/12.5 × 100% = 64%。"
+      },
+      {
+        "type": "work",
+        "prompt": "理想乙类 OCL 输出级用 ±15 V 双电源，向 8 Ω 纯电阻输出峰值 10 V 的正弦电压。忽略静态电流、驱动损耗和其他损耗。求负载功率 P_o、两路电源总功率 P_V、每只输出管的平均耗散功率和效率 η。说明两只管的管耗如何分开算。",
+        "steps": [
+          {
+            "criterion": "算出负载功率与两路电源总功率",
+            "solution": "I_m = 10/8 = 1.25 A。P_o = 10²/(2 × 8) = 6.25 W。每路电源的平均电流为 I_m/π，所以 P_V = 2 × 15 × 1.25/π ≈ 11.94 W。"
+          },
+          {
+            "criterion": "算出单管平均管耗与效率，并说明平分依据",
+            "solution": "对称的两管各承担相同的半个周期，所以单管平均耗散 P_T = (P_V − P_o)/2 ≈ 2.84 W。效率 η = P_o/P_V ≈ 52.4%。"
+          }
+        ]
+      },
+      {
+        "type": "work",
+        "prompt": "为理想乙类互补 OCL 级选一对输出管。电源 ±15 V，负载 8 Ω，最大正弦输出峰值近似 15 V。按本题设计规则，耐压、电流和允许平均耗散都要至少达到计算极值的 1.2 倍。已知最坏单管平均耗散 P_Tmax = V_CC²/(π²R_L)，其中 V_CC = 15 V。三个候选互补对在指定散热条件下的额定值分别为甲（40 V，3 A，4 W）、乙（30 V，4 A，6 W）、丙（50 V，2 A，5 W）。先估算截止管耐压和导通管峰值电流，再按三项指标选型。",
+        "steps": [
+          {
+            "criterion": "说明耐压来源并算出耐压、电流的最低额定值",
+            "solution": "输出到达一侧电源轨时，另一只截止管承受的电压接近两轨之差 30 V。考虑余量，耐压至少 36 V。峰值电流约 15/8 = 1.875 A，考虑余量后至少 2.25 A。"
+          },
+          {
+            "criterion": "核算允许平均耗散，说明选择与排除理由",
+            "solution": "P_Tmax = 225/(π² × 8) ≈ 2.85 W，考虑余量要求至少 3.42 W。甲的三项指标均达到要求。乙的耐压不足，丙的电流额定值不足。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": 7,
+    "title": "模拟集成电路",
+    "topics": "镜像恒流源与有源负载，差分对静态工作点，单端和双端输出、差模与共模抑制比",
+    "questions": [
+      {
+        "type": "choice",
+        "prompt": "图中 Q1、Q2 为同温且匹配的 NPN，C1、B1、E1 分别指 Q1 的集电极、基极、发射极，Q2 同理。Q2 工作在放大区，忽略基极电流和输出电阻的影响。哪一句说明了 R 如何设定输出支路的电流？",
+        "diagram": "+5 V --- R ---+--- C1       +5 V --- RL --- C2\n              |\n              +--- B1\n              |\n              +--- B2\n\nGND --------- E1            GND ----------- E2",
+        "options": [
+          "R 和 RL 必须完全相等，电流才会相同",
+          "Q2 的集电极直接短接到基极，强制它饱和",
+          "两个基极相连就使两管的集电极电压相等",
+          "Q1 的集电极与基极相连，参考电流建立的 V_BE 也加在 Q2 上"
+        ],
+        "answer": 3,
+        "explain": "先沿图找到 C1 和 B1 的公共节点。参考支路把 Q1 调到一定的 V_BE，两管的基极相连、发射极同电位，因此匹配的 Q2 能复制近似相同的电流。实际电路要保证 Q2 的集电结反偏，使它留在放大区。"
+      },
+      {
+        "type": "choice",
+        "prompt": "差分对的两个输入分别为 u₁、u₂。外界干扰让它们同时升高 10 mV。若 u_d = u₁ − u₂，u_c = (u₁ + u₂)/2，这次干扰分别带来多大的变化？",
+        "options": [
+          "差模增加 20 mV，共模不变",
+          "差模和共模都增加 10 mV",
+          "差模不变，共模增加 10 mV",
+          "差模增加 10 mV，共模增加 5 mV"
+        ],
+        "answer": 2,
+        "explain": "两个输入一起抬高同样多，做差时新增量相消，求平均值时新增量完整留下。差分输入级希望尽量压低这种共同变化造成的输出。"
+      },
+      {
+        "type": "choice",
+        "prompt": "集成放大器中，一组恒流源给差分对提供尾电流，另一组充当集电极的有源负载。在工作点附近，它们各自主要起什么作用？",
+        "options": [
+          "尾电流设定静态偏置，有源负载的大增量电阻有助于提高电压增益",
+          "尾电流只用来固定输出电压，有源负载把两集电极短路",
+          "尾电流只影响直流电源电压，有源负载使集电极电位永远不变",
+          "两组恒流源都只用于使三极管进入饱和区"
+        ],
+        "answer": 0,
+        "explain": "尾电流先定下两支路可分配的静态电流。工作点附近，有源负载的电流随端电压变化较小，表现为较大的增量电阻，输入级电流的微小变化就容易产生较大的输出电压变化。"
+      },
+      {
+        "type": "fill",
+        "prompt": "普通双 NPN 镜像源中，两管共基极、共发射极，Q1 的集电极与基极短接。两管匹配，β 都为 100，忽略早期效应。流入公共基极与 Q1 集电极节点的参考电流为 1.02 mA。计入两只管子的基极电流，Q2 的集电极电流是多少？",
+        "answer": 1,
+        "unit": "mA",
+        "explain": "参考电流同时供应 Q1 的集电极和两个基极。两管的集电极电流都记为 I，于是 1.02 mA = I + 2I/100，解得 I = 1.00 mA。"
+      },
+      {
+        "type": "fill",
+        "prompt": "差分放大器规定 u_d = u₁ − u₂。此刻两个输入端电压分别为 1.012 V 和 1.008 V。带符号的差模电压是多少？",
+        "answer": 4,
+        "unit": "mV",
+        "explain": "u_d = 1.012 − 1.008 = +0.004 V，即 +4 mV。定义中的顺序决定差模电压的符号。"
+      },
+      {
+        "type": "fill",
+        "prompt": "某差分放大器在同一输出端测得差模电压增益 −80，共模电压增益 +0.08。共模抑制比换算成分贝是多少？",
+        "answer": 60,
+        "unit": "dB",
+        "explain": "先求幅值之比 |A_d/A_c| = 80/0.08 = 1000，再按电压增益取 20 log₁₀(1000) = 60 dB。"
+      },
+      {
+        "type": "work",
+        "prompt": "匹配的 NPN 差分对用理想 2 mA 尾电流源，两只基极直流均接 0 V。每个集电极各经 4.7 kΩ 接 +12 V。取 V_BE = 0.7 V，忽略基极电流，尾电流源下方有足够的负电源电压。求两只管的静态工作点（I_CQ、U_CEQ），并用节点电位检查放大区假设。",
+        "steps": [
+          {
+            "criterion": "用对称条件求两支路电流和公共发射极电位",
+            "solution": "两基极等电位，两管匹配，尾电流平分。每个集电极电流 I_CQ ≈ 1.0 mA。V_E = V_B − 0.7 V = −0.7 V。"
+          },
+          {
+            "criterion": "计算集电极电位和 U_CEQ，并检查结偏置",
+            "solution": "两边 V_C = 12 − 1.0 × 4.7 = 7.3 V，U_CEQ = 7.3 − (−0.7) = 8.0 V。两管均有 V_C > V_B，集电结反偏，且发射结正偏，与放大区计算一致。"
+          }
+        ]
+      },
+      {
+        "type": "work",
+        "prompt": "某差分级的两侧略有失配，小信号关系为 u_o1 = −50u_d + 0.20u_c，u_o2 = +49u_d + 0.18u_c。已知 u_d = +2 mV、u_c = +100 mV。先只从第一侧取输出，再改为双端输出 u_o = u_o1 − u_o2。两种接法分别求差模增益、共模增益、共模抑制比（倍数）和输出电压变化。",
+        "steps": [
+          {
+            "criterion": "算出第一侧单端输出的两种增益、抑制比和输出变化",
+            "solution": "第一侧 A_d1 = −50，A_c1 = +0.20，比值取绝对值得 250。u_o1 = −50 × 2 + 0.20 × 100 = −80 mV。"
+          },
+          {
+            "criterion": "按指定端子顺序相减，算出双端输出的四个结果",
+            "solution": "两式相减后 A_d = −50 − 49 = −99，A_c = 0.20 − 0.18 = +0.02。共模抑制比为 4950，u_o = −99 × 2 + 0.02 × 100 = −196 mV。两侧的共模变化大部分抵消，轻微失配留下了一小部分。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": 8,
+    "title": "反馈放大电路",
+    "topics": "瞬时极性与四种反馈组态，端口电阻，深度负反馈估算，环路增益与自激",
+    "questions": [
+      {
+        "type": "choice",
+        "prompt": "图中放大器的开环输出随差值 u_s − u_f 增大而上升。R_f 与 R_g 均为正电阻。暂设输出电压上升，沿反馈支路追踪一次，这是什么反馈？",
+        "diagram": "u_s -------- (+)\\\n                 >------+------ u_o\nu_f ---+---- (-)/       |\n       |               R_f\n       +----------------+\n       |\n      R_g\n       |\n      GND",
+        "options": [
+          "电压并联正反馈",
+          "电流串联负反馈",
+          "电压串联负反馈",
+          "电流并联正反馈"
+        ],
+        "answer": 2,
+        "explain": "u_o 上升时，分压得到的 u_f 也上升。固定 u_s，净输入 u_s − u_f 随之减小，放大器会把输出往回拉。反馈支路取样输出电压，输入端比较两个电压，构成电压串联负反馈。"
+      },
+      {
+        "type": "choice",
+        "prompt": "某放大器取样负载电流，在输入节点把反馈电流与信号电流相减。闭环稳定，且环路增益足够大。与同一基本放大器相比，输入电阻和输出电阻通常怎样改变？",
+        "options": [
+          "输入电阻提高，输出电阻降低",
+          "输入电阻降低，输出电阻提高",
+          "输入电阻和输出电阻都提高",
+          "输入电阻和输出电阻都降低"
+        ],
+        "answer": 1,
+        "explain": "输入节点比较电流，属于并联混合，使输入电阻降低。输出端取样电流，会抵抗负载电流变化，使输出电阻提高。两者合起来是电流并联负反馈。"
+      },
+      {
+        "type": "choice",
+        "prompt": "要求负载电流尽量只由输入电压决定。负载串联小取样电阻，可以把输出电流换成反馈电压。为了提高输入电阻，该用哪一种负反馈？",
+        "options": [
+          "电压并联负反馈",
+          "电压串联负反馈",
+          "电流并联负反馈",
+          "电流串联负反馈"
+        ],
+        "answer": 3,
+        "explain": "要稳住负载电流，就取样电流。把取样电压与输入电压作差属于串联混合。这样兼有较高的输入电阻和输出电阻，适合用输入电压控制负载电流。"
+      },
+      {
+        "type": "fill",
+        "prompt": "中频电压负反馈系统满足 u_o = A(u_s − Fu_o)。已知 A = 200，F = 0.045，取精确闭环公式，求 u_o/u_s。",
+        "answer": 20,
+        "unit": "倍",
+        "explain": "整理得 A_f = A/(1 + AF)。这里 AF = 9，所以 A_f = 200/(1 + 9) = 20。若直接用 1/F 会忽略分母中的 1。"
+      },
+      {
+        "type": "fill",
+        "prompt": "某理想电压并联负反馈级中频时的反馈深度 1 + AF = 10。断开反馈但保持负载条件时，基本放大器的输出电阻为 2 kΩ。忽略取样网络的附加负载，闭环输出电阻约为多少？",
+        "answer": 200,
+        "unit": "Ω",
+        "explain": "电压取样会压低输出电阻。R_of = R_o/(1 + AF) = 2000/10 = 200 Ω。"
+      },
+      {
+        "type": "fill",
+        "prompt": "负反馈系统的特征方程写成 1 + L(jω) = 0。在环路增益幅值首次下降到 1 的频率，测得 L 的相位为 −150°。相位裕量是多少度？",
+        "answer": 30,
+        "unit": "°",
+        "explain": "按 1 + L 的约定，临界相位为 −180°。在单位增益频率还有 180° − 150° = 30° 的相位余量。"
+      },
+      {
+        "type": "work",
+        "prompt": "设计同相电压放大器。输出经 R_f 接反相端，反相端经 R_g = 10 kΩ 接地，输入加在同相端。要求深度负反馈下电压增益为 +11。选 R_f，并用 A = 1100 的有限开环电压增益核算实际闭环增益和 u_s = +0.10 V 时的输出。设电路在线性区，输入电流可忽略。",
+        "steps": [
+          {
+            "criterion": "用反馈分压比选出 R_f",
+            "solution": "F = R_g/(R_f + R_g)，深反馈时 A_f ≈ 1/F = 1 + R_f/R_g。令 1 + R_f/10 kΩ = 11，得 R_f = 100 kΩ。"
+          },
+          {
+            "criterion": "计入有限环路增益，求实际增益与带符号输出",
+            "solution": "此时 F = 1/11，AF = 100。实际 A_f = 1100/(1 + 100) ≈ +10.89，输出 u_o ≈ +1.089 V。"
+          }
+        ]
+      },
+      {
+        "type": "work",
+        "prompt": "一台中频工作正常的负反馈放大器，输入接地时出现高频振荡。采用分母 1 + L 的约定，开环稳定，环路幅值随频率单调下降且只有一次 −180° 相位交越。测得在该交越点 |L| = 1.60。解释微小扰动为什么可能长大。若补偿使该交越点的环路幅值降至原来的 1/2，且没有新增交越点，重新判断稳定性并求此时的增益裕量（倍数）。",
+        "steps": [
+          {
+            "criterion": "结合相位和幅值说明起振原因与临界条件",
+            "solution": "在 −180° 时，环路的附加反相使原本相减的反馈回到同相方向。幅值 1.60 大于 1，微扰绕一圈能变大，随后常被器件的非线性限制振幅。临界条件是相位 −180° 且 |L| = 1。"
+          },
+          {
+            "criterion": "重新计算幅值和增益裕量，并判断补偿效果",
+            "solution": "补偿后在相位交越点 |L| = 1.60/2 = 0.80。返回的扰动变小，在题设单一交越条件下系统稳定。增益裕量为 1/0.80 = 1.25 倍。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": 9,
+    "title": "信号运算和信号处理电路",
+    "topics": "运放的线性条件，加减、积分和微分运算，有源滤波与参数设计",
+    "questions": [
+      {
+        "type": "choice",
+        "prompt": "集成运放由差分输入级取得两端的电压差。理想运放接成稳定负反馈电路，且输出处于线性范围。列节点方程时可以同时采用哪两个近似？",
+        "options": [
+          "两输入端电压相等，两输入端电流均为零",
+          "两输入端电压均为零，输出电流也为零",
+          "两输入端电流相等且都等于反馈电流",
+          "两输入端电阻为零，输出电阻无穷大"
+        ],
+        "answer": 0,
+        "explain": "负反馈让两输入端的电位非常接近，这叫虚短。理想输入电阻无穷大，两端电流都近似为零，这叫虚断。电位是多少要看外部接线。"
+      },
+      {
+        "type": "choice",
+        "prompt": "某有源滤波器的幅频曲线如下。它最适合完成什么任务？",
+        "options": [
+          "通过直流，衰减高频噪声",
+          "保留中间一段频率，同时衰减低频和高频",
+          "仅压低中间一段频率，保留两端",
+          "随着频率升高一直增加增益"
+        ],
+        "answer": 1,
+        "explain": "看低频、中间和高频三处。只有中间的增益较高，这一段就是通带，所以它是带通滤波器。",
+        "diagram": "|A|\n ^        _______\n |       /       \\\n |______/         \\______\n +-----------------------> f"
+      },
+      {
+        "type": "choice",
+        "prompt": "在理想反相微分电路中，输入端串电容 C，反馈支路接电阻 R。输入是一段斜率恒为正的斜坡，运放在线性区。斜坡中段的输出是什么样？",
+        "options": [
+          "随时间向上弯曲",
+          "固定的正电压",
+          "固定的负电压",
+          "始终为零"
+        ],
+        "answer": 2,
+        "explain": "电容电流 i = C·duᵢ/dt。它流过反馈电阻，给出 uₒ = −RC·duᵢ/dt。斜率恒正，输出就是一个负的常数。"
+      },
+      {
+        "type": "fill",
+        "prompt": "理想差动运算电路中，两组电阻分别满足反馈与反相输入之比 R₂/R₁ = 4、同相端对地与同相输入之比 R₄/R₃ = 4。u₁ = 0.20 V 加到反相支路，u₂ = 0.70 V 加到同相支路。求输出。",
+        "answer": 2,
+        "unit": "V",
+        "explain": "匹配电阻比时，uₒ = 4(u₂ − u₁) = 4 × (0.70 − 0.20) = 2.0 V。也可先算同相端为 0.56 V，再列反相端的节点方程。"
+      },
+      {
+        "type": "fill",
+        "prompt": "反相积分器初始输出为 +0.50 V，RC = 10 ms。施加 +0.20 V 恒定输入并保持 5 ms。求这段时间结束时的输出。",
+        "answer": 0.4,
+        "unit": "V",
+        "explain": "输出改变量为 −uᵢ·Δt/(RC) = −0.20 × 5/10 = −0.10 V。把改变量加到初值，得到 +0.40 V。"
+      },
+      {
+        "type": "fill",
+        "prompt": "理想电压跟随器接在一阶 RC 低通网络后，用来隔离负载。串联电阻 10.0 kΩ，对地电容 10.0 nF。求截止频率，保留三位有效数字。",
+        "answer": 1.59,
+        "unit": "kHz",
+        "explain": "截止频率 f = 1/(2πRC)。RC = 10⁻⁴ s，故 f ≈ 1592 Hz = 1.59 kHz。"
+      },
+      {
+        "type": "work",
+        "prompt": "设计两路反相加法器，实现 uₒ = −3u₁ − 2u₂。使用理想运放，反馈电阻为 60 kΩ，同相端接地。① 说明两路输入怎样接，求两只输入电阻。② 若 u₁ = +0.10 V、u₂ = −0.10 V，求输出，并用节点电流核对方向。",
+        "steps": [
+          {
+            "criterion": "画出或说明反相求和节点，选对两只输入电阻",
+            "solution": "两路信号分别经 R₁、R₂ 接反相端。反馈电阻从输出接回该节点。虚地节点给出 uₒ = −(60 kΩ/R₁)u₁ − (60 kΩ/R₂)u₂，所以 R₁ = 20 kΩ，R₂ = 30 kΩ。"
+          },
+          {
+            "criterion": "算出代数和，并用电流方向解释输出符号",
+            "solution": "uₒ = −0.30 + 0.20 = −0.10 V。以流入求和节点为正，两支路约为 +5.00 μA 和 −3.33 μA，合计流入 1.67 μA。这些电流经 60 kΩ 流向输出，输出比虚地低约 0.10 V。"
+          }
+        ]
+      },
+      {
+        "type": "work",
+        "prompt": "传感器输出含直流偏置和 1.0 kHz 的微弱交流信号。设计一级电路，隔开直流、让高频通带增益为 +4。器件有 0.10 μF 电容、15.9 kΩ 电阻和理想运放，同相放大器的反馈下臂取 10.0 kΩ。① 说明滤波网络的接法并求截止频率。② 求反馈上臂，并估算 1.0 kHz 的电压增益幅值。设信号源内阻可忽略。",
+        "steps": [
+          {
+            "criterion": "选出高通网络并算出截止频率",
+            "solution": "输入先经过串联电容，再到同相输入端。15.9 kΩ 从该端接地。直流时电容开路。f_c = 1/(2π × 15.9 kΩ × 0.10 μF) ≈ 100 Hz。"
+          },
+          {
+            "criterion": "求出同相级反馈电阻与 1 kHz 实际增益",
+            "solution": "同相级增益 1 + R_f/10 kΩ = 4，因此 R_f = 30 kΩ。单极点高通在 1 kHz 的幅值因子为 1/√[1 + (100/1000)²] ≈ 0.995，整级电压增益幅值约为 3.98。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "chapter": 10,
+    "title": "信号产生电路",
+    "topics": "正弦振荡条件，文氏桥的选频、起振和稳幅，比较器阈值与电压传输特性",
+    "questions": [
+      {
+        "type": "choice",
+        "prompt": "一只正弦振荡器要把上电时很小的扰动逐渐放大。按带符号的环路增益 L = AF 定义，目标频率处应满足哪条起振条件？",
+        "options": [
+          "|L| 小于 1，相位为 0°",
+          "|L| 大于 1，相位为 0° 或 360° 的整数倍",
+          "|L| 等于 0，相位任意",
+          "|L| 大于 1，相位必须为 180°"
+        ],
+        "answer": 1,
+        "explain": "绕回来的信号要和原信号同相，还要略大一些，下一圈才会增长。振幅稳定以后，稳幅环节让有效环路增益的幅值回到 1 附近。"
+      },
+      {
+        "type": "choice",
+        "prompt": "给电路输入缓慢上升再下降的三角波。输出只在两个电平间跳变，输入上升和下降时都在 +1 V 翻转。理想条件下最符合哪种电路？",
+        "options": [
+          "反相积分器",
+          "文氏桥振荡器",
+          "具有两个不同阈值的滞回比较器",
+          "单门限电压比较器"
+        ],
+        "answer": 3,
+        "explain": "只有一个翻转门槛。输入从上方或下方经过它都会触发切换，符合单门限比较器的传输特性。"
+      },
+      {
+        "type": "choice",
+        "prompt": "文氏桥振荡器起振成功，但输出顶端变平。要产生失真更小的稳定正弦波，哪种措施合适？",
+        "options": [
+          "让放大倍数随振幅增加而适度减小",
+          "继续提高放大倍数，让削顶更明显",
+          "去掉整个 RC 正反馈网络",
+          "把反馈相位永久改为反相"
+        ],
+        "answer": 0,
+        "explain": "振幅过大时让有效增益下降，小振幅时保留起振所需的增益。振幅会在削顶之前逐渐稳定下来。"
+      },
+      {
+        "type": "fill",
+        "prompt": "文氏桥的串联臂和并联臂采用相等的 R 和 C。若 R = 15.9 kΩ、C = 1.00 nF，估算振荡频率。",
+        "answer": 10,
+        "unit": "kHz",
+        "explain": "f₀ = 1/(2πRC) = 1/(2π × 15.9 kΩ × 1.00 nF) ≈ 10.0 kHz。"
+      },
+      {
+        "type": "fill",
+        "prompt": "单门限比较器的反相端接分压参考。+12 V 经 30 kΩ 接参考节点，节点再经 10 kΩ 接地。同相端接输入，输入从 0 V 缓慢升高。求输出翻转时的输入电压。",
+        "answer": 3,
+        "unit": "V",
+        "explain": "理想输入电流近似为零，参考点电压为 12 × 10/(30 + 10) = 3 V。输入从下向上越过这个值时输出翻转。"
+      },
+      {
+        "type": "fill",
+        "prompt": "单门限比较器在 uᵢ > +1 V 时输出高电平。输入为 uᵢ = 2 sin(2πft) V。一个周期内，高电平占总时间的百分之几？",
+        "answer": 33.33,
+        "unit": "%",
+        "explain": "要使正弦值大于 1/2，一个周期内相位需位于 30° 至 150°。高电平持续 120°，占 120/360 ≈ 33.3%。"
+      },
+      {
+        "type": "work",
+        "prompt": "设计 1.00 kHz 文氏桥振荡器。RC 串联臂、并联臂的电容都选 10.0 nF，两只选频电阻相等。运放接同相放大器，反相端到地的电阻为 10 kΩ。① 选两只电阻。② 从 18 kΩ 和 21 kΩ 中选一只作起振时的反馈上臂，并说明输出变大后，上臂有效电阻应向哪个值靠近。",
+        "steps": [
+          {
+            "criterion": "由选频公式求两只相等的电阻",
+            "solution": "两臂都取 R = 1/(2πf₀C) = 1/(2π × 1000 Hz × 10 nF) ≈ 15.9 kΩ。"
+          },
+          {
+            "criterion": "说明选哪只电阻起振，并给出稳幅时的目标",
+            "solution": "等值文氏桥在 f₀ 的反馈系数为 1/3。选 21 kΩ 时 A = 1 + 21/10 = 3.1，环路增益略大于 1。理想稳幅时有效 A 回到约 3，等效上臂应向 20 kΩ 靠近。"
+          }
+        ]
+      },
+      {
+        "type": "work",
+        "prompt": "下面的理想比较器工作在 0 V 和 +5 V 两个输出电平。输入 uᵢ 在 0～6 ms 从 0 V 匀速升至 3 V。① 写出分段传输关系，草画 uₒ 对 uᵢ 的图。② 求这一段的翻转时刻。实际输入叠有 ±50 mV 噪声时，怎样改电路才能避免在阈值附近反复翻转？",
+        "steps": [
+          {
+            "criterion": "给出分段输出、阈值和跳变方向",
+            "solution": "同相端保持 +1.5 V。uᵢ \u003c 1.5 V 时输出 +5 V，uᵢ > 1.5 V 时输出 0 V。画图时两边是水平线，在 1.5 V 处从高向低跳变，临界点不指定唯一电平。"
+          },
+          {
+            "criterion": "算出翻转时间，提出能抗噪声的改法",
+            "solution": "斜率为 3 V/6 ms = 0.5 V/ms，因此在 3 ms 越过阈值。可引入正反馈形成滞回，分别设上、下阈值，例如 1.6 V 和 1.4 V，回差 0.2 V 大于噪声的 0.1 V 峰峰值。"
+          }
+        ],
+        "diagram": " +1.5 V ----(+)\\\n                >---- uo\n     ui ----(-)/"
+      }
+    ]
+  },
+  {
+    "chapter": 11,
+    "title": "直流稳压电源",
+    "topics": "桥式整流，电容滤波，串联反馈调压，固定与可调三端稳压器",
+    "questions": [
+      {
+        "type": "choice",
+        "prompt": "理想单相桥式整流带电阻负载，交流电源换到另一个半周时，负载电流怎样变化？",
+        "options": [
+          "同一只二极管继续导通，负载电流反向",
+          "四只二极管同时导通，负载电流降到零",
+          "换另一对二极管导通，负载电流方向相同",
+          "两对二极管都截止，负载完全没有电流"
+        ],
+        "answer": 2,
+        "explain": "两个半周各有一对对角二极管导通。两条路线都把电流送入负载的同一端，输出成为全波脉动直流。"
+      },
+      {
+        "type": "choice",
+        "prompt": "桥式整流后并联滤波电容。在变压器电压、频率和电容都不变时，把负载电阻调小，输出纹波通常怎样变化？",
+        "options": [
+          "变小，因为放电变慢",
+          "变大，因为相邻充电峰之间电容放电更快",
+          "永远为零，因为有滤波电容",
+          "频率随着负载电流增大而加倍"
+        ],
+        "answer": 1,
+        "explain": "负载需要更多电流。整流管截止期间，电容向负载供电，电压下降得更快，下一次补充充电前留下更大的波动。"
+      },
+      {
+        "type": "choice",
+        "prompt": "设备需要对地 +12 V，稳压器输入端的正电压和散热均满足手册要求。用哪种接法最直接？",
+        "options": [
+          "采用 7912 并把公共端接地",
+          "把初级交流线直接接到 7812 输入端",
+          "只在负载两端接电感",
+          "用 7812，公共端接地，输入接滤波后的正电源"
+        ],
+        "answer": 3,
+        "explain": "78 系列是固定正电压稳压器。7812 提供 +12 V。输入电压、压差、电流与散热均需满足器件条件。"
+      },
+      {
+        "type": "fill",
+        "prompt": "理想桥式整流带纯电阻负载，未加滤波电容，变压器次级正弦电压有效值 U₂ = 12.0 V。按课程近似系数 0.90 求负载电压的平均值。",
+        "answer": 10.8,
+        "unit": "V",
+        "explain": "全波整流后取正弦绝对值的平均。U_L ≈ 0.90U₂ = 10.8 V。这里的 U₂ 是有效值。"
+      },
+      {
+        "type": "fill",
+        "prompt": "桥式整流加电容滤波，变压器次级正弦电压有效值 U₂ = 15.0 V。负载与电容量满足课件的常用有载估算条件。按 1.2U₂ 估算负载电压平均值。",
+        "answer": 18,
+        "unit": "V",
+        "explain": "U_L ≈ 1.2 × 15.0 = 18.0 V。这个系数用于常见有载电容滤波条件。实际数值还取决于负载、电容量、二极管压降和变压器内阻。"
+      },
+      {
+        "type": "fill",
+        "prompt": "理想近似下，可调三端稳压器保持 OUT 与 ADJ 之间为 1.25 V。OUT 到 ADJ 接 240 Ω，ADJ 到地接 720 Ω。忽略 ADJ 脚电流，输入压差充足。求输出电压。",
+        "answer": 5,
+        "unit": "V",
+        "explain": "240 Ω 中电流为 1.25/240 A，下方 720 Ω 中流过相同电流。Uₒ = 1.25 × (1 + 720/240) = 5.00 V。"
+      },
+      {
+        "type": "work",
+        "prompt": "串联反馈型稳压电源的基准为 +2.5 V，接误差放大器同相端。如下图，取样点接反相端。放大器输出升高会让串联调整管导通更强。Rbottom = 10 kΩ，Rtop 可在 10～30 kΩ 调整。① 在调节能力充足时求输出范围。② 某次负载加重使输出短暂下降，沿反馈回路解释电源怎样把它拉回来。",
+        "steps": [
+          {
+            "criterion": "用取样电压等于基准求范围上下限",
+            "solution": "稳压时 Vsense ≈ 2.5 V，且 Vsense = Vₒ × Rbottom/(Rtop + Rbottom)。因此 Vₒ ≈ 2.5 × (1 + Rtop/10 kΩ)，上下限分别为 5.0 V 和 10.0 V。"
+          },
+          {
+            "criterion": "按顺序说清取样、误差放大和调整管三个环节",
+            "solution": "Vₒ 下降使 Vsense 下降，同相端比反相端高得更多，放大器输出升高。调整管导通增强，自身压降减小，负载端电压被拉高。"
+          }
+        ],
+        "diagram": "Vo --- Rtop ---o--- Rbottom --- 0 V\n               |\n             Vsense"
+      },
+      {
+        "type": "work",
+        "prompt": "为 0.25 A 负载设计 +12 V 固定电源。已知变压器次级为 15 V 有效值，桥式整流、电容滤波后的平均值按 1.2U₂ 取，带载时实测最低瞬时值为 15.5 V。备选器件为 7812 与 7912，题设所需最小压差为 2.0 V。① 写出电源各级顺序，选择稳压器并检查压差。② 忽略稳压器静态电流，估算其平均发热功率。在 40 °C 环境下，若要求结温不超过 100 °C，允许的结到环境总热阻最多是多少？",
+        "steps": [
+          {
+            "criterion": "给出整流、滤波、稳压顺序与低谷压差",
+            "solution": "从变压器次级依次接桥式整流、电容滤波、7812、负载。+12 V 需要正稳压器。输入低谷仍有 15.5 − 12 = 3.5 V 压差，高于题设的 2.0 V，能满足这一项条件。"
+          },
+          {
+            "criterion": "用有载平均输入估算耗散，求出热阻上限",
+            "solution": "整流滤波的平均输入约为 18 V。平均发热 P ≈ (18 − 12) × 0.25 = 1.5 W。允许温升为 100 − 40 = 60 °C，所需结到环境总热阻不超过 60/1.5 = 40 °C/W。"
+          }
+        ]
+      }
+    ]
+  }
+]</script>
+<script>
+(() => {
+  'use strict';
+  const units=JSON.parse(document.getElementById('examBank').textContent);
+  const byChapter=new Map(units.map(unit=>[String(unit.chapter),unit]));
+  const $=name=>document.getElementById(name);
+  const esc=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const letters='ABCD';
+  const matchNotes={
+    1:'对应现有讲义第二章「半导体与二极管」。',
+    2:'对应现有讲义第三章 3.1–3.6 的双极型晶体管与单级放大。',
+    4:'对应现有讲义第四章「场效应管及其基本放大电路」。',
+    5:'多级放大对应讲义 3.7，频率响应对应老师的第五章课件。'
+  };
+  const groups=[['choice','一、选择题','3 题，每题 10 分'],['fill','二、填空题','3 题，每题 10 分'],['work','三、计算与设计题','2 题，每题 20 分']];
+  const key=n=>'modian-unit-exam-v1-'+n;
+  const memory=new Map();
+  let unit,attempt,blankPrint=false;
+  function fresh(){return {answers:{},paper:{},marks:{},submitted:false};}
+  function read(chapter){
+    if(memory.has(chapter))return memory.get(chapter);
+    const result=fresh();
+    try {
+      const stored=JSON.parse(localStorage.getItem(key(chapter)));
+      if(stored&&typeof stored==='object'){
+        for(const field of ['answers','paper','marks'])if(stored[field]&&typeof stored[field]==='object')result[field]=stored[field];
+        result.submitted=stored.submitted===true;
+      }
+    }catch{}
+    return result;
+  }
+  function save(){
+    memory.set(unit.chapter,attempt);
+    try {localStorage.setItem(key(unit.chapter),JSON.stringify(attempt));}
+    catch{$('saveStatus').textContent='此浏览器暂时无法保存，作答仅保留在当前页面。';}
+  }
+  function clean(text){return String(text??'').normalize('NFKC').trim().replace(/\s+/g,'').replace(/[−–]/g,'-');}
+  function correct(q,index){
+    const raw=attempt.answers[index];
+    if(q.type==='choice')return raw===q.answer;
+    const input=clean(raw);
+    if(!input)return false;
+    if(Array.isArray(q.answer))return q.answer.some(x=>clean(x).toLowerCase()===input.toLowerCase());
+    const suffix=clean(q.unit);
+    const literal=suffix&&input.endsWith(suffix)?input.slice(0,-suffix.length):input;
+    const parts=literal.split('/');
+    const number=/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?$/;
+    if(parts.length>2||!parts.every(part=>number.test(part)))return false;
+    const value=Number(parts[0])/Number(parts[1]??1);
+    return Number.isFinite(value)&&Math.abs(value-q.answer)<=Math.max(Math.abs(q.answer)*.01,1e-10)+1e-12;
+  }
+  function answered(q,i){
+    if(q.type==='choice')return Number.isInteger(attempt.answers[i]);
+    return Boolean(String(attempt.answers[i]??'').trim())||(q.type==='work'&&attempt.paper[i]===true);
+  }
+  function reference(q){
+    if(q.type==='choice')return letters[q.answer]+'．'+q.options[q.answer];
+    if(Array.isArray(q.answer))return q.answer[0];
+    return String(Number(q.answer.toPrecision(4)))+(q.unit?' '+q.unit:'');
+  }
+  function workMarks(q,i){
+    if(!answered(q,i))return {pending:0,points:0};
+    const marks=q.steps.map((_,j)=>attempt.marks[i+'-'+j]);
+    return {pending:marks.filter(x=>x!==0&&x!==10).length,points:marks.filter(x=>x===10).length*10};
+  }
+  function drawSummary(){
+    if(!attempt.submitted||blankPrint){$('summary').replaceChildren();return;}
+    let objective=0,manual=0,pending=0;
+    unit.questions.forEach((q,i)=>{
+      if(q.type==='work'){const m=workMarks(q,i);manual+=m.points;pending+=m.pending;}
+      else if(correct(q,i))objective+=10;
+    });
+    const main=pending?'客观题 '+objective+' / 60':'总分 '+(objective+manual)+' / 100';
+    const detail=pending?'计算设计题还有 '+pending+' 个步骤待自评。':'客观题 '+objective+' / 60　计算设计题 '+manual+' / 40';
+    $('summary').innerHTML='<div class="score"><strong>'+main+'</strong><span>'+detail+'</span></div>';
+  }
+  function drawQuestion(q,i){
+    const submitted=attempt.submitted&&!blankPrint, disabled=submitted?' disabled':'';
+    const value=blankPrint?'':attempt.answers[i]??'';
+    let control='',solution='';
+    if(q.type==='choice'){
+      control='<div class="choices" role="radiogroup" aria-labelledby="q'+i+'">'+q.options.map((option,k)=>
+        '<label class="option"><input type="radio" name="q'+i+'" data-answer="'+i+'" value="'+k+'"'+(value===k?' checked':'')+disabled+'><span>'+letters[k]+'．'+esc(option)+'</span></label>').join('')+'</div>';
+    }else if(q.type==='fill'){
+      control='<label class="fillRow screenAnswer"><input type="text" maxlength="120" aria-labelledby="q'+i+'" data-answer="'+i+'" value="'+esc(value)+'"'+disabled+'><span>'+esc(q.unit)+'</span></label><div class="paperAnswer">答 __________________ '+esc(q.unit)+'</div>';
+    }else{
+      control='<textarea class="work screenAnswer" aria-labelledby="q'+i+'" data-answer="'+i+'" placeholder="写下思路、算式和答案"'+disabled+'>'+esc(value)+'</textarea><label class="onPaper"><input data-paper="'+i+'" type="checkbox"'+(!blankPrint&&attempt.paper[i]?' checked':'')+disabled+'>已在纸上作答</label><div class="paperAnswer workLines"></div>';
+    }
+    if(submitted&&q.type!=='work'){
+      const hit=correct(q,i), status=hit?'答对了 · 10 分':answered(q,i)?'答错了 · 0 分':'未作答 · 0 分';
+      solution='<div class="solution"><span class="'+(hit?'right':'wrong')+'">'+status+'</span><p><b>参考答案</b>　'+esc(reference(q))+'</p><p>'+esc(q.explain)+'</p></div>';
+    }else if(submitted){
+      solution='<div class="solution"><b>'+(answered(q,i)?'按两步核对，每步 10 分':'未作答 · 0 分')+'</b>'+q.steps.map((step,j)=>{
+        const mk=i+'-'+j, selected=attempt.marks[mk];
+        const mark=answered(q,i)?'<label class="mark">这一步得分<select data-mark="'+mk+'"><option value="">待自评</option><option value="10"'+(selected===10?' selected':'')+'>10 分</option><option value="0"'+(selected===0?' selected':'')+'>0 分</option></select></label>':'';
+        return '<div class="step"><strong>'+esc(step.criterion)+'</strong><p>'+esc(step.solution)+'</p>'+mark+'</div>';
+      }).join('')+'</div>';
+    }
+    const figure=q.diagram?'<figure class="figure"><pre>'+esc(q.diagram)+'</pre></figure>':'';
+    return '<article class="question" id="item-'+i+'"><h3 id="q'+i+'"><span class="qnum">'+(i+1)+'.</span>'+esc(q.prompt)+'</h3>'+figure+control+solution+'</article>';
+  }
+  function draw(){
+    $('questions').innerHTML=groups.map(([type,title,points])=>'<section class="group"><h2>'+title+' <small>'+points+'</small></h2>'+
+      unit.questions.map((q,i)=>q.type===type?drawQuestion(q,i):'').join('')+'</section>').join('');
+    $('paperActions').innerHTML=attempt.submitted?'<button class="btn" type="button" id="retake">重做这套卷</button>':'<button class="btn primary" type="submit">交卷看解析</button>';
+    drawSummary();
+  }
+  function openUnit(){
+    const requested=location.hash.match(/^#unit-(\d+)$/)?.[1];
+    unit=byChapter.get(requested)||units[0];
+    if(!unit)return;
+    attempt=read(unit.chapter);
+    $('unitSelect').value=unit.chapter;
+    for(const a of $('units').querySelectorAll('a')){if(a.hash==='#unit-'+unit.chapter)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');}
+    $('unitNumber').textContent='期末单元测 · 复习范围第 '+unit.chapter+' 章';
+    $('paperTitle').textContent=unit.title;
+    $('topics').textContent=unit.topics;
+    $('classMatch').textContent=matchNotes[unit.chapter]||'本卷按复习范围中的知识点编排。';
+    document.title=unit.title+'单元测 · 模电手记';
+    draw();window.scrollTo(0,0);
+  }
+  $('units').innerHTML=units.map(u=>'<a href="#unit-'+u.chapter+'"><span class="num">'+String(u.chapter).padStart(2,'0')+'</span><span>'+esc(u.title)+'</span></a>').join('');
+  $('unitSelect').innerHTML=units.map(u=>'<option value="'+u.chapter+'">第 '+u.chapter+' 章　'+esc(u.title)+'</option>').join('');
+  $('unitSelect').addEventListener('change',e=>location.hash='unit-'+e.target.value);
+  window.addEventListener('hashchange',openUnit);
+  $('paperForm').addEventListener('input',e=>{
+    const field=e.target;
+    if(attempt.submitted)return;
+    if(field.hasAttribute('data-answer'))attempt.answers[field.dataset.answer]=field.type==='radio'?Number(field.value):field.value;
+    else if(field.hasAttribute('data-paper'))attempt.paper[field.dataset.paper]=field.checked;
+    else return;
+    save();
+  });
+  $('paperForm').addEventListener('change',e=>{
+    const field=e.target;
+    if(!attempt.submitted||!field.hasAttribute('data-mark'))return;
+    if(field.value==='')delete attempt.marks[field.dataset.mark];else attempt.marks[field.dataset.mark]=Number(field.value);
+    save();drawSummary();
+  });
+  $('paperForm').addEventListener('submit',e=>{
+    e.preventDefault();if(attempt.submitted)return;
+    const missing=unit.questions.filter((q,i)=>!answered(q,i)).length;
+    if(missing&&!confirm('还有 '+missing+' 题未作答。按空题 0 分交卷吗？'))return;
+    attempt.submitted=true;save();draw();$('summary').scrollIntoView({block:'center'});
+  });
+  $('paperActions').addEventListener('click',e=>{
+    if(e.target.id!=='retake'||!confirm('清除本卷本次作答和成绩，重新开始吗？'))return;
+    attempt=fresh();save();draw();window.scrollTo(0,0);
+  });
+  $('backTop').addEventListener('click',e=>{e.preventDefault();window.scrollTo(0,0);});
+  window.addEventListener('beforeprint',()=>{blankPrint=true;draw();});
+  window.addEventListener('afterprint',()=>{blankPrint=false;draw();});
+  $('printPaper').addEventListener('click',()=>window.print());
+  openUnit();
+  if(location.protocol!=='file:'&&'serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'}).catch(()=>{});
+})();
+</script>
+</body>
+</html>
