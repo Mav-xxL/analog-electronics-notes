@@ -1,5 +1,5 @@
 'use strict';
-const release='83da23b3a7a653950b79';
+const release='083096e229ca77cbae45';
 const scope=self.registration.scope;
 const prefix='modian-reading:'+scope+':';
 const cacheName=prefix+release;

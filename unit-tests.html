@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="handbook-release" content="83da23b3a7a653950b79">
+<meta name="handbook-release" content="083096e229ca77cbae45">
 <title>期末单元测 · 模电手记</title>
 <style>
 :root{color-scheme:light;--ink:#172f44;--blue:#19537e;--line:#cbdde9;--muted:#50697b;--soft:#eaf4fa;--paper:#fff;--good:#185b46;--bad:#95452c}
@@ -33,7 +33,7 @@ header{border-bottom:1px solid var(--line);background:#fff}.top,.shell{max-width
       <p class="edition" id="unitNumber"></p><h1 id="paperTitle"></h1><p class="topics" id="topics"></p>
       <p class="guide">每套 100 分。选择和填空自动判分，计算设计题交卷后按步骤自评。数值按题旁单位填写，允许 1% 的误差。</p>
       <details class="source"><summary>查看命题依据</summary><p>单元和题型按《新版模电期末复习》编排，保留原章号。题目结合《模电复习参考（20210106）》中的识图、计算、设计和调试要求原创。</p><p id="classMatch"></p></details>
-      <div class="actions"><button type="button" class="btn" id="printPaper">打印本单元空白卷</button><a href="unit-exams-print.pdf" download="模电期末单元测（10套空白卷）.pdf">下载十套空白卷（PDF）</a></div>
+      <div class="actions"><button type="button" class="btn" id="printPaper">打印本单元空白卷</button><a id="downloadBook" href="unit-exams-print.pdf" download="模电期末单元测（10套空白卷）.pdf">下载十套空白卷（PDF）</a><span id="downloadStatus" role="status"></span></div>
       <p class="save" id="saveStatus" aria-live="polite">作答自动保存在此浏览器。</p>
       <p class="printOnly">姓名 __________________　日期 ________________　得分 ______ / 100</p>
     </div>
@@ -1129,6 +1129,26 @@ header{border-bottom:1px solid var(--line);background:#fff}.top,.shell{max-width
   window.addEventListener('beforeprint',()=>{blankPrint=true;draw();});
   window.addEventListener('afterprint',()=>{blankPrint=false;draw();});
   $('printPaper').addEventListener('click',()=>window.print());
+  $('downloadBook').addEventListener('click',async event=>{
+    if(location.protocol==='file:'||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+    event.preventDefault();
+    const link=event.currentTarget;
+    $('downloadStatus').textContent='';
+    try{
+      const response=await fetch(link.href);
+      if(!response.ok)throw Error('Download unavailable');
+      const url=URL.createObjectURL(await response.blob());
+      const download=document.createElement('a');
+      download.href=url;
+      download.download=link.download;
+      document.body.append(download);
+      download.click();
+      download.remove();
+      setTimeout(()=>URL.revokeObjectURL(url),60000);
+    }catch{
+      $('downloadStatus').textContent='整本试卷暂时无法下载。可以先打印本单元，或联网后再试。';
+    }
+  });
   openUnit();
   if(location.protocol!=='file:'&&'serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'}).catch(()=>{});
 })();
